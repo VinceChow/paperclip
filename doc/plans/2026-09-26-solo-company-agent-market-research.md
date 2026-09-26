@@ -7,6 +7,7 @@
 **Companion documents:**
 - [Industry kits: templates for consultants, coaches, designers, property agents, creators](./2026-09-26-opc-industry-kits.md)
 - [Reliability and cost: the outcome loop harness](./2026-09-26-opc-reliability-cost-harness.md)
+- [Go-to-market and marketing plan: landing page, social media, launch](./2026-09-26-opc-marketing-plan.md)
 
 **Method:** Primary data where it exists: the US Census 2023 Nonemployer Statistics file, Census business-formation releases, Google Trends, domain registries (RDAP), the USPTO trademark search, and competitor pricing pages rendered in a headless browser. Secondary data (industry reports, press, reviews) is marked as such. See [What changed since v1](#what-changed-since-v1) and [Data quality notes](#data-quality-notes).
 
@@ -43,6 +44,8 @@
    - The same work costs about **$114** on a single frontier model without caching.
    - Paperclip-style timed heartbeats (5 agents every 30 minutes) cost about **$980**.
    - See the [reliability and cost document](./2026-09-26-opc-reliability-cost-harness.md).
+6. **UX is the product.** Users see a team, a "Needs you" inbox, a definition of done and a Friday results report. They never see agents, adapters, tokens or heartbeats. See [§6.4](#64-product-and-ux-dead-simple-for-people-with-no-ai-knowledge).
+7. **Go-to-market is category-led and founder-led.** Channels: a public "Company of One, Run in Public" content series, an OPC community, industry creators and affiliates, SEO on "what is a one-person company," and one launch moment per kit. Paid acquisition stays off until conversion is proven. Base target: 4,000 paying companies in 12 months at a blended CAC ≤ $200. See the [marketing plan](./2026-09-26-opc-marketing-plan.md).
 
 ### Scorecard
 
@@ -297,7 +300,7 @@ Legend: ✅ strong · ◐ partial · ❌ missing.
 | 5 | **Partnerships**: India OPC registration services, Korean support centers, Shopify/Wix app stores, coaching schools, brokerages | Medium | Low | Medium | 4 |
 
 **Recommended focus:** Opportunity 1, with Opportunity 2 running in parallel as the brand engine:
-- Start with **three kits: Consultant, Coach/Creator, and Creative freelancer (designer/marketer).** They are digital, low-compliance and high-frequency.
+- Start with **four kits: Consultant, Coach, Creator, and Creative freelancer (designer/marketer).** Coach and Creator share one content engine, so this is about three engines of build work. These segments are digital, low-compliance and high-frequency.
 - Add **Property agent** next. The pain is strong and willingness to pay is proven (Lofty), but it needs TCPA and Fair Housing guardrails.
 - Details in the [kits document](./2026-09-26-opc-industry-kits.md).
 
@@ -348,6 +351,48 @@ At $79/mo, the recommended design leaves about a 40–50% gross margin for an *a
 
 No revenue share, 14-day trial, and annual discount. Allowances are shown in dollars and in "jobs," never in tokens or credits.
 
+### 6.4 Product and UX: dead simple for people with no AI knowledge
+
+Paperclip's own product goals already point this way: "time-to-first-success under 5 minutes," "progressive disclosure," and "do not force users to understand provider/API-key plumbing" (`doc/PRODUCT.md`). An OPC product has to go further, because the user has never configured an agent and never will.
+
+**What the user sees instead of Paperclip concepts**
+
+| Paperclip concept | What a non-technical OPC owner sees |
+|---|---|
+| Company + goal | "My business" + "This month's goal" (for example *5 new clients*) |
+| CEO agent + org chart | A **team card** per kit (Chief of Staff plus 3–4 teammates). No org chart unless asked. |
+| Adapters (Claude Code, Codex, OpenClaw…) | Nothing. Models are bundled and routed automatically. |
+| Heartbeats | "Works when a new email, lead or meeting arrives" · "Sends your brief at 8am" |
+| Issues / sub-issues | **This week's plan**: a checklist that expands on tap |
+| Outcome contract | **"Done means…"** card on every job, with ✓ marks as checks pass |
+| Budgets (token salaries) | "You've used $18 of your $40 this month" (never tokens or credits) |
+| Approvals / board | **Needs you** inbox: Approve · Edit · Skip, one tap on a phone, email, iMessage or WhatsApp |
+| Work products | **Results** gallery: posts, proposals, invoices, pages |
+| Connections catalog | "Connect Gmail" with plain-language scopes ("read and draft; never send without your OK") |
+| Run transcripts / logs | "What happened and why" in two sentences; raw logs three taps deep |
+
+**Principles**
+1. **Five-minute start.**
+   - The user answers a short interview: offer, ideal client, prices, and a website URL or voice samples.
+   - The user picks a kit, and the first job runs live while they watch.
+   - Target: the first *accepted* deliverable within 10 minutes.
+2. **Zero setup.** No API keys, no model choice, no prompt writing. Industry defaults come from the kit.
+3. **One place to act.** Everything that needs the owner lands in the Needs-you inbox. It works on mobile first and is also available by email or messaging app.
+4. **Visible trust ladder.** Each action type (for example "send follow-up emails") shows its level: *Draft only → Ask me → Auto with daily digest*. The product *suggests* promotion after a streak of approvals with no edits. It never promotes on its own for actions that move money or can't be undone.
+5. **Undo and recall.** Sends are delayed for a short window ("undo send"), scheduled posts can be cancelled, and every action shows *why* it happened.
+6. **Plain-language money.** Allowances are shown in dollars and jobs, with hard caps. Nothing surprises the user on the bill.
+7. **Friday results report.** It covers what got done, estimated hours saved, cost, **what didn't work**, and next week's plan. It is also the retention and sharing moment.
+8. **Progressive disclosure.** Summary → steps and checks → raw logs, for the curious.
+9. **Accessible and local.** WCAG 2.2 AA. Kits and UI are localized for expansion markets (Korean; English/Hindi for India).
+
+**UX metrics:**
+- Time to first accepted deliverable (target < 10 minutes).
+- Onboarding completion (target ≥ 70%).
+- Approvals handled on mobile (share).
+- Support tickets per active company.
+- Weekly active approvers.
+- CSAT after the weekly report.
+
 ---
 
 ## 7. Risks & Challenges
@@ -370,8 +415,8 @@ No revenue share, 14-day trial, and annual discount. Allowances are shown in dol
 
 ### Phase 0: Validate (3–4 weeks)
 - [ ] **Brand and category.** Pick 3 candidate brand names, run a trademark knock-out search (USPTO and EUIPO) plus domain checks, and write the "platform for one-person companies" copy.
-- [ ] **Landing-page test, 2×2:** positioning ("One Person Company" vs "solo business") × kit (Consultant vs Property agent). Measure waitlist conversion and pre-orders.
-- [ ] **30 interviews** across the Consultant, Coach/Creator, Designer and Property agent personas. Capture each person's *weekly recurring jobs* and their *approval threshold* (what they would let go out without looking).
+- [ ] **Landing-page test, 2×2:** positioning ("One Person Company" vs "solo business") × kit (Consultant vs Property agent). Property agent is included only to size Phase 2 demand early. Measure waitlist conversion and pre-orders. Full experiment list: [marketing plan §4.5](./2026-09-26-opc-marketing-plan.md#45-first-six-experiments-ab-or-sequential).
+- [ ] **30 interviews** across the Consultant, Coach, Creator, Designer and Property agent personas. Capture each person's *weekly recurring jobs* and their *approval threshold* (what they would let go out without looking).
 - [ ] **Concierge pilot:** 15 paying users at $49–$79. The Paperclip engine runs behind the scenes with the outcome loop, and a human spot-checks the work.
 - [ ] **Kill or pivot criteria:**
   - Fewer than 30% of pilot users retained at week 4.
@@ -380,7 +425,7 @@ No revenue share, 14-day trial, and annual discount. Allowances are shown in dol
 
 ### Phase 1: MVP (8–12 weeks)
 - [ ] Onboarding interview that produces a business profile, then kit selection, then the first accepted deliverable in under 10 minutes.
-- [ ] Three kits: Consultant, Coach/Creator, Creative freelancer. Each has 4–6 recurring workflows with outcome contracts.
+- [ ] Four kits (Consultant, Coach, Creator, Creative freelancer) on three shared workflow engines. Each kit has 4–6 recurring workflows with outcome contracts.
 - [ ] The outcome loop harness (checks, grader, approvals, trust ladder), a "Needs you" inbox, and a weekly results report.
 - [ ] Flat pricing with dollar and job allowances; hard caps.
 - [ ] Per-kit eval suites of 20–50 golden tasks, plus pass^3 consistency tracking.
@@ -423,6 +468,7 @@ No revenue share, 14-day trial, and annual discount. Allowances are shown in dol
 ## Data Quality Notes
 
 - **Census NES** counts *establishments* of businesses with no paid employees that file taxes. Side income shows up as small establishments, which is why 60.6% earn under $25K. The "≥$50K" filter is the best available proxy for "can pay."
+- **Two similar figures, different meanings:** **7.46M** = *all* US nonemployers with ≥$50K receipts; **7.45M** = all nonemployers (any size) in the 13 target segments, of which **1.63M** earn ≥$50K.
 - **Google Trends** values are relative indexes, not search volumes, and they carry sampling noise. Q3 2026 is a partial quarter.
 - **The USPTO search** showed no results for the exact phrase. That is not legal advice; do a proper clearance search with counsel.
 - **Domain checks**: `.ai` lookups for several exact names were rate-limited (HTTP 429), so their status is unknown.

@@ -1,7 +1,7 @@
 # Industry Kits for One-Person Companies: Demand Research and Kit Design
 
 **Date:** 2026-09-26
-**Part of:** [Market Research Report (v2)](./2026-09-26-solo-company-agent-market-research.md) · [Reliability and cost harness](./2026-09-26-opc-reliability-cost-harness.md)
+**Part of:** [Market Research Report (v2)](./2026-09-26-solo-company-agent-market-research.md) · [Reliability and cost harness](./2026-09-26-opc-reliability-cost-harness.md) · [Marketing plan](./2026-09-26-opc-marketing-plan.md)
 **Question:** Does it help to ship ready-made *industry kits* (templates of agents, workflows and orchestration) for the major one-person-company industries: consultants, coaches, designers, property agents, creators, and others?
 
 ---

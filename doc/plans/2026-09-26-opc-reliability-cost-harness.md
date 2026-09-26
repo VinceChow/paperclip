@@ -1,7 +1,7 @@
 # Reliability and Cost: The Outcome Loop Harness for One-Person Companies
 
 **Date:** 2026-09-26
-**Part of:** [Market Research Report (v2)](./2026-09-26-solo-company-agent-market-research.md) · [Industry kits](./2026-09-26-opc-industry-kits.md)
+**Part of:** [Market Research Report (v2)](./2026-09-26-solo-company-agent-market-research.md) · [Industry kits](./2026-09-26-opc-industry-kits.md) · [Marketing plan](./2026-09-26-opc-marketing-plan.md)
 **Question:** How do we make sure agents *get the requested job done as instructed*, with results users can rely on, at a reasonable cost? What harness and loop engineering does that take, and how much of it does Paperclip already have?
 
 ---
@@ -26,7 +26,7 @@
 |---|---|---|
 | Overambition: does too much, runs out of context mid-task | Anthropic: agents left "a feature half-implemented and undocumented"; fixed by working "on only one feature at a time" ([Anthropic, long-running harnesses](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents)) | Small steps; a checklist in a progress document |
 | Premature completion: "looks done" | Later sessions "declare the job done"; features marked complete "without proper testing" (same source) | Outcome contract with every criterion marked *failing* until verified; an independent checker |
-| Inconsistency across runs | τ-bench: best model <50% pass^1, **~25% pass^8** in retail ([Sierra](https://sierra.ai/blog/benchmarking-ai-agents)) | Measure pass^k; narrow scopes; deterministic steps where possible |
+| Inconsistency across runs | τ-bench (2024 models): best model <50% pass^1, **~25% pass^8** in retail ([Sierra](https://sierra.ai/blog/benchmarking-ai-agents)). Newer models score higher, but the gap between pass^1 and pass^k persists as a pattern. | Measure pass^k; narrow scopes; deterministic steps where possible |
 | Long, realistic office work is hard | TheAgentCompany: best agent completed **~30%** of 175 office tasks (2025-era models) ([paper](https://papers.nips.cc/paper_files/paper/2025/file/0d744742f6fac4d1134c019b7cef3c8a-Paper-Datasets_and_Benchmarks_Track.pdf)) | Workflows with defined steps instead of open-ended autonomy |
 | Capability is rising fast | METR: the 50% time horizon is doubling every ~4–7 months ([METR](https://metr.org/time-horizons/)) | Design so that model upgrades improve results without redesign |
 | Multi-agent coordination is expensive | Agents use **~4x** the tokens of chat; multi-agent systems **~15x** ([Anthropic, multi-agent research](https://www.anthropic.com/engineering/multi-agent-research-system)) | One orchestrator plus skills; subagents only for parallel research |
