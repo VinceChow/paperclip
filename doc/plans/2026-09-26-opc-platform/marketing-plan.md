@@ -1,7 +1,7 @@
 # Go-to-Market and Marketing Plan: The Platform for One-Person Companies
 
 **Date:** 2026-09-26
-**Part of:** [Market Research Report (v2)](./2026-09-26-solo-company-agent-market-research.md) · [Industry kits](./2026-09-26-opc-industry-kits.md) · [Reliability and cost harness](./2026-09-26-opc-reliability-cost-harness.md)
+**Part of:** [Market Research Report (v2)](./market-research.md) · [Industry kits](./industry-kits.md) · [Reliability and cost harness](./reliability-cost-harness.md)
 **Scope:** Positioning, brand, landing page, social media, content, SEO and AI-search visibility, community, creators and affiliates, PR, launch, paid acquisition, onboarding and lifecycle, measurement, budget, compliance, a 90-day calendar, expansion markets, and launch copy.
 
 **Working assumptions:**
@@ -573,6 +573,6 @@ China is excluded: domestic OPC programs favor local AI tools, and market access
 - Retention and email: [EverHelp churn](https://www.ever-help.com/blog/saas-retention-rate-benchmarks) · [Livmo churn](https://livmo.com/blog/saas-churn-benchmarks-valuation/) · [ClickMinded email](https://www.clickminded.com/email-marketing-benchmarks/)
 - Growth playbooks: [nrich: Lovable](https://nrich.io/challenger-brand-gtm-library/lovable) · [Startup Riders: Lovable](https://www.startupriders.com/p/how-lovable-hit-400m-arr-in-14-months) · [ARR Club: Sintra](https://www.arr.club/sintra/sintra-arr-hit-12m-in-year-one-started-as-a-weekend-project)
 - Compliance: [FTC reviews rule](https://www.ftc.gov/news-events/news/press-releases/2024/08/federal-trade-commission-announces-final-rule-banning-fake-reviews-testimonials) · [FTC rule Q&A](https://www.ftc.gov/business-guidance/resources/consumer-reviews-testimonials-rule-questions-answers) · [AI disclosure by platform](https://influencermarketinghub.com/ai-disclosure-rules/) · [AI labels for advertisers](https://www.digitalapplied.com/blog/ai-content-labeling-rules-advertisers-2026-reference) · [AI lifetime-deal risk](https://shareai.now/blogs/insights/ai-lifetime-deal-pricing/)
-- Market data used in messaging: see the [main report](./2026-09-26-solo-company-agent-market-research.md) (Census NES 2023, Google Trends, Korea, China OPC).
+- Market data used in messaging: see the [main report](./market-research.md) (Census NES 2023, Google Trends, Korea, China OPC).
 
 **Data notes:** Platform, advertising and influencer benchmarks mostly come from vendor and agency studies (secondary) and vary widely. Use them to plan budgets, then replace them with your own measured numbers within the first 4–6 weeks.

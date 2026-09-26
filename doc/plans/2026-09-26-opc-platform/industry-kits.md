@@ -1,7 +1,7 @@
 # Industry Kits for One-Person Companies: Demand Research and Kit Design
 
 **Date:** 2026-09-26
-**Part of:** [Market Research Report (v2)](./2026-09-26-solo-company-agent-market-research.md) · [Reliability and cost harness](./2026-09-26-opc-reliability-cost-harness.md) · [Marketing plan](./2026-09-26-opc-marketing-plan.md)
+**Part of:** [Market Research Report (v2)](./market-research.md) · [Reliability and cost harness](./reliability-cost-harness.md) · [Marketing plan](./marketing-plan.md)
 **Question:** Does it help to ship ready-made *industry kits* (templates of agents, workflows and orchestration) for the major one-person-company industries: consultants, coaches, designers, property agents, creators, and others?
 
 ---
@@ -12,7 +12,7 @@
 
 - **Kits solve the blank-page problem that kills activation for non-technical users.** Users get a working "company" on day one: a team, recurring jobs and a first week of wins. They don't have to design agents.
 - **Per-industry search demand is real but thin.** In US Google Trends (12-month mean, same scale), "AI for small business" scores **48**. Industry terms score far lower: consultants 6.8, designers 5.4, real estate agents 5.1, coaches 4.5, content creators 4.1, therapists 3.4, photographers 2.2. So one brand should be the demand magnet, with industry landing pages and kits capturing the long tail.
-- **Kits are the unit of reliability.** Each kit is a small set of well-defined recurring workflows. Each workflow has an *outcome contract* and a golden-task eval suite, which is what makes "result-driven" achievable (see the [harness document](./2026-09-26-opc-reliability-cost-harness.md)). Open-ended "do anything" agents cannot be verified at this level.
+- **Kits are the unit of reliability.** Each kit is a small set of well-defined recurring workflows. Each workflow has an *outcome contract* and a golden-task eval suite, which is what makes "result-driven" achievable (see the [harness document](./reliability-cost-harness.md)). Open-ended "do anything" agents cannot be verified at this level.
 
 ## 2. Evidence that templates drive adoption
 

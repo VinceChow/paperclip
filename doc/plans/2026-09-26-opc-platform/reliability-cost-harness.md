@@ -1,7 +1,7 @@
 # Reliability and Cost: The Outcome Loop Harness for One-Person Companies
 
 **Date:** 2026-09-26
-**Part of:** [Market Research Report (v2)](./2026-09-26-solo-company-agent-market-research.md) · [Industry kits](./2026-09-26-opc-industry-kits.md) · [Marketing plan](./2026-09-26-opc-marketing-plan.md)
+**Part of:** [Market Research Report (v2)](./market-research.md) · [Industry kits](./industry-kits.md) · [Marketing plan](./marketing-plan.md)
 **Question:** How do we make sure agents *get the requested job done as instructed*, with results users can rely on, at a reasonable cost? What harness and loop engineering does that take, and how much of it does Paperclip already have?
 
 ---

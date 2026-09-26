@@ -5,9 +5,9 @@
 **End goal under test:** A popular, dead-simple product with great UX, marketed as *the platform for One Person Companies*
 **Date:** 2026-09-26 (v2, with full network access)
 **Companion documents:**
-- [Industry kits: templates for consultants, coaches, designers, property agents, creators](./2026-09-26-opc-industry-kits.md)
-- [Reliability and cost: the outcome loop harness](./2026-09-26-opc-reliability-cost-harness.md)
-- [Go-to-market and marketing plan: landing page, social media, launch](./2026-09-26-opc-marketing-plan.md)
+- [Industry kits: templates for consultants, coaches, designers, property agents, creators](./industry-kits.md)
+- [Reliability and cost: the outcome loop harness](./reliability-cost-harness.md)
+- [Go-to-market and marketing plan: landing page, social media, launch](./marketing-plan.md)
 
 **Method:** Primary data where it exists: the US Census 2023 Nonemployer Statistics file, Census business-formation releases, Google Trends, domain registries (RDAP), the USPTO trademark search, and competitor pricing pages rendered in a headless browser. Secondary data (industry reports, press, reviews) is marked as such. See [What changed since v1](#what-changed-since-v1) and [Data quality notes](#data-quality-notes).
 
@@ -37,15 +37,15 @@
 4. **Industry kits (templates) are a strong multiplier for demand, but they should sit inside one product rather than become separate products.**
    - Template libraries drive adoption: n8n has 11.7K+ workflow templates, 69% of them AI; Notion is known for starter templates; PaperclipCloud sells "AI company templates."
    - Per-industry search demand is small next to "AI for small business" (~48 vs 2–7 on the same Google Trends scale).
-   - So: one horizontal OPC brand, with industry kits as the onboarding path and as landing pages. See the [kits document](./2026-09-26-opc-industry-kits.md).
+   - So: one horizontal OPC brand, with industry kits as the onboarding path and as landing pages. See the [kits document](./industry-kits.md).
 5. **Reliability and cost are solvable with harness engineering. This is the moat.**
    - Model the product as workflows with an "outcome contract" (a definition of done), not as an org chart of always-on agents.
    - At current Claude prices, a well-designed active user costs **about $31–40/month** in inference.
    - The same work costs about **$114** on a single frontier model without caching.
    - Paperclip-style timed heartbeats (5 agents every 30 minutes) cost about **$980**.
-   - See the [reliability and cost document](./2026-09-26-opc-reliability-cost-harness.md).
+   - See the [reliability and cost document](./reliability-cost-harness.md).
 6. **UX is the product.** Users see a team, a "Needs you" inbox, a definition of done and a Friday results report. They never see agents, adapters, tokens or heartbeats. See [§6.4](#64-product-and-ux-dead-simple-for-people-with-no-ai-knowledge).
-7. **Go-to-market is category-led and founder-led.** Channels: a public "Company of One, Run in Public" content series, an OPC community, industry creators and affiliates, SEO on "what is a one-person company," and one launch moment per kit. Paid acquisition stays off until conversion is proven. Base target: 4,000 paying companies in 12 months at a blended CAC ≤ $200. See the [marketing plan](./2026-09-26-opc-marketing-plan.md).
+7. **Go-to-market is category-led and founder-led.** Channels: a public "Company of One, Run in Public" content series, an OPC community, industry creators and affiliates, SEO on "what is a one-person company," and one launch moment per kit. Paid acquisition stays off until conversion is proven. Base target: 4,000 paying companies in 12 months at a blended CAC ≤ $200. See the [marketing plan](./marketing-plan.md).
 
 ### Scorecard
 
@@ -302,7 +302,7 @@ Legend: ✅ strong · ◐ partial · ❌ missing.
 **Recommended focus:** Opportunity 1, with Opportunity 2 running in parallel as the brand engine:
 - Start with **four kits: Consultant, Coach, Creator, and Creative freelancer (designer/marketer).** Coach and Creator share one content engine, so this is about three engines of build work. These segments are digital, low-compliance and high-frequency.
 - Add **Property agent** next. The pain is strong and willingness to pay is proven (Lofty), but it needs TCPA and Fair Housing guardrails.
-- Details in the [kits document](./2026-09-26-opc-industry-kits.md).
+- Details in the [kits document](./industry-kits.md).
 
 ---
 
@@ -325,7 +325,7 @@ Paperclip already provides the hard infrastructure:
 
 See `doc/execution-semantics.md`, `doc/TASK-WATCHDOG.md`, `doc/plans/2026-09-08-reliable-execution-recovery.md` and `doc/CLIPHUB.md`.
 
-**The needed change:** replace the *org chart of always-on agents with heartbeats* with **outcome-driven workflows triggered by events**, presented to the user as a team. That is both cheaper (§6.2) and more reliable. The full design, including a map from existing Paperclip features to gaps, is in the [reliability and cost document](./2026-09-26-opc-reliability-cost-harness.md).
+**The needed change:** replace the *org chart of always-on agents with heartbeats* with **outcome-driven workflows triggered by events**, presented to the user as a team. That is both cheaper (§6.2) and more reliable. The full design, including a map from existing Paperclip features to gaps, is in the [reliability and cost document](./reliability-cost-harness.md).
 
 ### 6.2 Unit economics: viable at $49–$79 per month
 
@@ -415,7 +415,7 @@ Paperclip's own product goals already point this way: "time-to-first-success und
 
 ### Phase 0: Validate (3–4 weeks)
 - [ ] **Brand and category.** Pick 3 candidate brand names, run a trademark knock-out search (USPTO and EUIPO) plus domain checks, and write the "platform for one-person companies" copy.
-- [ ] **Landing-page test, 2×2:** positioning ("One Person Company" vs "solo business") × kit (Consultant vs Property agent). Property agent is included only to size Phase 2 demand early. Measure waitlist conversion and pre-orders. Full experiment list: [marketing plan §4.5](./2026-09-26-opc-marketing-plan.md#45-first-six-experiments-ab-or-sequential).
+- [ ] **Landing-page test, 2×2:** positioning ("One Person Company" vs "solo business") × kit (Consultant vs Property agent). Property agent is included only to size Phase 2 demand early. Measure waitlist conversion and pre-orders. Full experiment list: [marketing plan §4.5](./marketing-plan.md#45-first-six-experiments-ab-or-sequential).
 - [ ] **30 interviews** across the Consultant, Coach, Creator, Designer and Property agent personas. Capture each person's *weekly recurring jobs* and their *approval threshold* (what they would let go out without looking).
 - [ ] **Concierge pilot:** 15 paying users at $49–$79. The Paperclip engine runs behind the scenes with the outcome loop, and a human spot-checks the work.
 - [ ] **Kill or pivot criteria:**
