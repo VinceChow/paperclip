@@ -1,40 +1,75 @@
-# Market Research Report: AI Agent Orchestration for One-Person Companies
+# Market Research Report (v2): The Platform for One-Person Companies
 
-**Topic:** Feasibility of a Paperclip-style AI agent orchestration product built specifically for one-person companies
-**Target market:** Solopreneurs, freelancers and aspiring founders, including people with little AI knowledge
-**End goal under test:** A popular, dead-simple product with great UX that lets anyone launch and run a one-person company
-**Date:** 2026-09-26
-**Method:** Web research across industry reports, government statistics, funding news, product reviews and public complaint channels, plus a read of this repository's product docs (`doc/GOAL.md`, `doc/PRODUCT.md`). See [Data quality notes](#data-quality-notes) before relying on individual figures.
+**Topic:** Feasibility of a Paperclip-style AI agent orchestration product built for one-person companies ("OPC")
+**Target market:** Solo business owners and aspiring founders, including people with little AI knowledge
+**End goal under test:** A popular, dead-simple product with great UX, marketed as *the platform for One Person Companies*
+**Date:** 2026-09-26 (v2, with full network access)
+**Companion documents:**
+- [Industry kits: templates for consultants, coaches, designers, property agents, creators](./2026-09-26-opc-industry-kits.md)
+- [Reliability and cost: the outcome loop harness](./2026-09-26-opc-reliability-cost-harness.md)
+
+**Method:** Primary data where it exists: the US Census 2023 Nonemployer Statistics file, Census business-formation releases, Google Trends, domain registries (RDAP), the USPTO trademark search, and competitor pricing pages rendered in a headless browser. Secondary data (industry reports, press, reviews) is marked as such. See [What changed since v1](#what-changed-since-v1) and [Data quality notes](#data-quality-notes).
 
 ---
 
 ## Executive Summary
 
-**Verdict: Go, with a narrow entry point and validation before building much.** The demand is real and people are already paying. The winning position is *not* the one most competitors are chasing.
+**Verdict: Go.** Demand is strong and people already pay for this. Market it as the platform for One Person Companies, but use "One Person Company" as the *category you lead*, not as your trademarked brand name. Win on proven outcomes and trust, not on autonomy.
 
-1. **The demand is real and growing.** The US has about 30.4M nonemployer businesses. The share of new startups with a solo founder rose from 23.7% (2019) to 36.3% (H1 2025). More than 20 Chinese cities now subsidize "one-person companies." Products aimed at this buyer grew very fast: Sintra reached about $12M ARR and 40K paying customers in its first year. Motion's "AI Employees" went from $0 to 8-figure ARR in three months. Lovable passed $500M ARR, and 80% of its builders say they are non-technical.
-2. **The "AI runs your company while you sleep" category brings in money but fails its users.** Polsia (about $10M ARR self-reported, raised $30M) has a 1.8/5 Trustpilot score and public accusations that its companies are "hollow shells." NanoCorp's own update says fewer than 1% of the companies created on it have ever earned anything. Both take a 20% cut of revenue. This framing also sits close to the "AI-powered passive income" schemes the FTC is actively shutting down.
-3. **Paperclip proves developers want an org-chart model for agents but shows the UX gap.** Paperclip has about 74–77K GitHub stars. Reviewers call it a weak fit for non-technical users and describe surprise token bills. Third-party hosts already sell one-click managed Paperclip, which confirms demand for a hosted, simpler version.
-4. **The biggest threat is the platforms, not the startups.** OpenAI launched ChatGPT Work and a *ChatGPT for Small Business* program in July 2026, with partners including Shopify, Intuit and Wix. Anthropic's Claude Cowork targets non-coders. Shopify, Intuit and HubSpot are building agents into the tools solo businesses already use.
-5. **The open gap** is a product that combines four things no competitor offers together:
-   - Honest, outcome-focused guidance: check demand first, report truthfully.
-   - A dead-simple interface with approvals as the default.
-   - Predictable flat pricing with no token plumbing.
-   - Portability, so the user owns their business and data and pays no revenue share.
+1. **Demand is large and verified.**
+   - The US had **30.43M nonemployer businesses in 2023**, with **$1.75T in receipts** (Census primary file).
+   - **7.46M** of them earn ≥$50K a year, so they can pay for software.
+   - Across the 13 knowledge-service segments this product fits, there are **7.45M solo businesses**, of which **1.63M earn ≥$50K**.
+   - Korea counts **1.16M "one-person creative enterprises"** (+15.4% YoY).
+   - **23 Chinese cities** have run formal OPC support programs since October 2025.
+2. **"One Person Company" is a rising term that no one owns in the West.**
+   - Worldwide Google search interest for the phrase rose about **2.5x** from 2024 to Q2 2026.
+   - Its top related searches are *definitional* ("what is one person company"): people are still learning what it means, which is a category-creation opening.
+   - The alternative term "solopreneur" is being claimed by incumbents. Its #1 related search is Intuit's *QuickBooks Solopreneur* product.
+   - Caveats: "OPC" collides with the OPC Foundation's registered marks, "onepersoncompany.com" has been taken since 2012, and a wave of OPC-style `.ai` domains was registered in 2025–26.
+3. **The market gap is outcomes and trust, not capability.**
+   - The "autonomous company" leaders sell activity: 206 of 30,272 NanoCorp companies (0.68%) had ever earned anything as of July 2026. Polsia's reviews are split between 5 stars and 1 star.
+   - AI-employee bundles (Sintra, Marblism) sell help with individual tasks, not coordinated work toward a goal.
+   - Orchestration tools (Paperclip, n8n, Relevance) are still too technical for this buyer.
+   - 78% of small-business owners don't trust AI with even low-level tasks without oversight.
+   - **No product promises and verifies "done" for solo businesses.**
+4. **Industry kits (templates) are a strong multiplier for demand, but they should sit inside one product rather than become separate products.**
+   - Template libraries drive adoption: n8n has 11.7K+ workflow templates, 69% of them AI; Notion is known for starter templates; PaperclipCloud sells "AI company templates."
+   - Per-industry search demand is small next to "AI for small business" (~48 vs 2–7 on the same Google Trends scale).
+   - So: one horizontal OPC brand, with industry kits as the onboarding path and as landing pages. See the [kits document](./2026-09-26-opc-industry-kits.md).
+5. **Reliability and cost are solvable with harness engineering. This is the moat.**
+   - Model the product as workflows with an "outcome contract" (a definition of done), not as an org chart of always-on agents.
+   - At current Claude prices, a well-designed active user costs **about $31–40/month** in inference.
+   - The same work costs about **$114** on a single frontier model without caching.
+   - Paperclip-style timed heartbeats (5 agents every 30 minutes) cost about **$980**.
+   - See the [reliability and cost document](./2026-09-26-opc-reliability-cost-harness.md).
 
-**Recommended focus:** Start with **people who already run a solo business** (coaches, consultants, freelancers, creators, small e-commerce sellers). Give them a "first AI team" that runs recurring operations with approvals. Add a guided "launch a business" mode later as a way to acquire users, with validation gates instead of autopilot.
+### Scorecard
 
-### Feasibility scorecard
-
-| Dimension | Rating | Why |
+| Dimension | Rating | Evidence |
 |---|---|---|
-| Market demand | **Strong** | 30M+ US solo businesses, record business formation, fast-growing AI-employee products |
-| Willingness to pay | **Proven at $25–$100/mo** | Sintra, Marblism, Lindy and Motion price points; solopreneur AI budgets of about $50–$200/mo |
-| Technical feasibility | **High** | Paperclip is MIT-licensed and already has budgets, approvals, task hierarchy, connections and chat; model prices fall about 10x/yr at constant capability |
-| Agent reliability for autonomy | **Medium–Low** | The best agents finished about 30% of realistic office tasks (TheAgentCompany); design for a human in the loop |
-| Competitive intensity | **High and rising** | Well-funded startups plus OpenAI, Anthropic, Meta, Shopify and Intuit |
-| Differentiation potential | **Medium** | Must come from UX, trust and outcomes rather than model access |
-| Regulatory / reputational risk | **Medium** | FTC scrutiny of AI "business opportunity" claims; EU AI Act Article 50 transparency rules in force since 2026-08-02 |
+| Market demand | **Strong** | 30.4M US nonemployers; 1.16M Korean one-person enterprises; China OPC policy wave; record-pace business formation |
+| Willingness to pay | **Proven at $24–$99/mo** | Marblism $24; Sintra $97 list price; Lindy $29.99–$199.99; Motion AI Employees $99–$599; Lofty $299 for solo real estate agents |
+| "One Person Company" as positioning | **Feasible as a category, weak as a brand name** | Rising, unowned, meaningful across regions; generic, hard to trademark; "OPC" conflicts with an existing mark |
+| Technical feasibility | **High** | Paperclip is MIT-licensed and already has budgets, approvals, completion reviews, a watchdog, recovery, evals and a connection catalog |
+| Reliability at acceptable cost | **Medium → High with the right harness** | Measured levers: caching 2.7–5.3x cheaper; retrying failures at higher effort cuts cost about 45%; independent grading loops |
+| Competitive intensity | **High** | Polsia ($30M raised), NanoCorp, Sintra, Marblism, Motion, Lindy; OpenAI ChatGPT Work plus its small-business program; Claude Cowork; Lofty |
+| Regulatory / reputational risk | **Medium** | FTC Operation AI Comply targets "AI business opportunity" claims; EU AI Act Article 50 in force since 2026-08-02 |
+
+---
+
+## What changed since v1
+
+| Item | v1 (search summaries) | v2 (verified) |
+|---|---|---|
+| US nonemployers | 30.4M (secondary) | **30,427,808 establishments, $1.753T receipts (2023)**, from the Census NES file |
+| Share of nonemployers that can pay | Not measured | **24.5% earn ≥$50K; 13.2% earn ≥$100K; 60.6% earn <$25K** |
+| Polsia Trustpilot | 1.8/5 on 35 reviews | **3.2/5 on 279 reviews**, sharply split: 33% five-star, 35% one-star |
+| NanoCorp outcomes | "<1% earned" | **206 of 30,272 companies ever earned** (July 20, 2026 update); **$1,530 earned platform-wide in 30 days** (Sept 15, 2026) |
+| Lindy pricing | $49.99+ | **$29.99 / $99.99 / $199.99 per user**; "approvals built in"; pauses when credits run out |
+| Paperclip positioning | "Zero-human companies" | Homepage now reads **"A team of agents for every person."** Upstream is moving toward mainstream users. |
+| Paperclip hosting wrappers | Demand signal | Demand is real but thin: **Paperclip.inc shuts down on 2026-10-02**; PaperclipCloud's banner promotes a different product |
+| Polsia revenue | ~$10M ARR (self-reported) | Fortune (March 2026): **$4.5M run-rate**; later self-reports ~$10M. Treat as unverified. |
 
 ---
 
@@ -42,293 +77,354 @@
 
 | Metric | Value | Source |
 |---|---|---|
-| AI agents market, 2026 | $10.9B–$19.3B (estimates vary by firm) | [Grand View Research](https://www.grandviewresearch.com/industry-analysis/ai-agents-market-report), [MarketsandMarkets](https://www.marketsandmarkets.com/Market-Reports/agentic-ai-market-208190735.html), [Research and Markets](https://www.researchandmarkets.com/reports/6103459/ai-agents-market-report) |
-| AI agents growth rate | ~40–50% CAGR through 2030–2035 | Same as above; [BCC Research](https://www.bccresearch.com/pressroom/ait/ai-agents-market-to-grow-433-annually) |
-| US nonemployer businesses | 29.8M (2022, $1.7T receipts, 6.8% of the economy) → 30.4M (2023) | [US Census Bureau](https://www.census.gov/library/stories/2025/05/smallest-businesses.html), [SBE Council](https://sbecouncil.org/2026/06/22/solopreneur-america/) |
-| Average nonemployer receipts | ≈ $57K/yr (derived: $1.7T ÷ 29.8M) | Derived from Census |
-| Growth in nonemployer establishments | 24M (2015) → 30M (2023), +25% | [Census via Founder Reports](https://founderreports.com/solopreneur-statistics/) |
-| US independent workers | 72.9M total; 27.6M full-time (2025) | [MBO Partners](https://www.mbopartners.com/state-of-independence) |
-| Solo-founder share of new startups | 23.7% (2019) → 36.3% (H1 2025) | [Carta Solo Founders Report](https://carta.com/data/solo-founders-report/) |
-| Speed to first revenue | 20% of Stripe Atlas startups charged their first customer within 30 days in 2025 (8% in 2020) | [Stripe Atlas 2025 review](https://stripe.com/blog/stripe-atlas-startups-in-2025-year-in-review) |
-| New business applications | Near record pace through 2026 | [Census Business Formation Statistics](https://www.census.gov/econ/bfs/index.html) |
-| China one-person companies (OPC) | 23 major cities launched OPC support frameworks since Oct 2025; >7M new solo companies last year (+42%) | [Rest of World](https://restofworld.org/2026/china-ai-one-person-companies-incentives/), [Asia Financial](https://www.asiafinancial.com/chinas-young-tapping-ai-subsidies-to-launch-one-person-firms) |
-| Solopreneur AI usage | 64% use gen-AI for marketing, 37% for customer service, 36% for sales | [SBE Council](https://sbecouncil.org/2026/06/22/solopreneur-america/) |
+| US nonemployer businesses (2023) | **30,427,808**; receipts **$1.753T** | [Census NES 2023 file](https://www2.census.gov/programs-surveys/nonemployer-statistics/datasets/2023/historical-datasets/) |
+| …with receipts ≥ $25K / ≥ $50K / ≥ $100K | **11.99M / 7.46M / 4.03M** | Same (receipts-size classes) |
+| Legal form | 26.3M sole proprietors; 2.3M partnerships; 1.4M S-corps; 0.46M C-corps | Same |
+| Nonemployers in 13 target knowledge-service segments | **7.45M** (1.63M earn ≥$50K) | Same; see §3 |
+| US independent workers (2025) | 72.9M total; **27.6M full-time** | [MBO Partners](https://www.mbopartners.com/state-of-independence) |
+| Skilled US knowledge workers who freelance | **38% in 2026** (28% in 2025) | [Upwork Future Workforce Index 2026](https://investors.upwork.com/news-releases/news-release-details/upworks-future-workforce-index-2026-how-ai-redefining-value-work) |
+| Solo-founder share of new startups | 23.7% (2019) → **36.3% (H1 2025)** | [Carta](https://carta.com/data/solo-founders-report/) (via press; carta.com blocks automated fetches) |
+| Time to first revenue | **20%** of Stripe Atlas startups charge a customer within 30 days (more than double 2020); 42% build AI products; 44% of those build agents | [Stripe Atlas 2025 review](https://stripe.com/blog/stripe-atlas-startups-in-2025-year-in-review) |
+| Korea one-person creative enterprises | **1.16M** (+15.4% YoY; 23.7% of all startups) | [Korea policy briefing](https://www.korea.kr/briefing/pressReleaseView.do?newsId=156753709), [Newspim](https://www.newspim.com/news/view/20260406000315) |
+| China OPC | 23 major cities with OPC programs since Oct 2025; >7M new solo companies last year (+42%); youth unemployment 18.9% | [Rest of World](https://restofworld.org/2026/china-ai-one-person-companies-incentives/), [Honghub report](https://www.globenewswire.com/news-release/2026/04/29/3283960/0/en/Honghub-Unveils-2026-OPC-Insight-Report-Revealing-China-s-One-Person-Company-Boom-and-a-72x-AI-Labor-Advantage.html), [Asia Financial](https://www.asiafinancial.com/chinas-young-tapping-ai-subsidies-to-launch-one-person-firms) |
+| China OPC founder profile | 75% non-technical; **median AI spend $39/mo**; top 20% spend $200+/mo | Honghub 2026 OPC Insight Report (1,500+ surveys) |
+| AI agents market (mostly enterprise) | $10.9B–$19.3B in 2026; ~40–50% CAGR | [Grand View](https://www.grandviewresearch.com/industry-analysis/ai-agents-market-report), [MarketsandMarkets](https://www.marketsandmarkets.com/Market-Reports/agentic-ai-market-208190735.html) |
 
 ### Industry context
 
-**The one-person company is becoming normal.** Three trends are combining. First, the number of solo businesses keeps growing: the US has 30M+ nonemployers, and 27.6M Americans work independently full-time. Second, solo founding is becoming mainstream in venture-backed startups: Carta shows the solo share rising every year since 2019. Third, AI is cutting the time from idea to first revenue: Stripe says the share of Atlas startups charging a customer within 30 days more than doubled since 2020. Governments are responding too. Shenzhen, Shanghai and 20+ other Chinese cities offer compute subsidies, rent support and loans to AI-powered one-person companies. That program is partly a response to 18.9% youth unemployment ([The Standard](https://www.thestandard.com.hk/china/article/329977/Young-Chinese-use-AI-to-launch-one-person-firms-over-job-anxiety)).
+**One-person companies are a global movement, and each market frames them differently:**
+- **US / UK:** "solopreneur," "freelancer," and "one-person business."
+- **India:** a *legal entity*. The One Person Company was created by the Companies Act 2013, with tens of thousands registered.
+- **Korea:** a *policy category*, the one-person creative enterprise under the 1인 창조기업 support act.
+- **China:** a *state-backed movement*, with OPC communities, compute subsidies and loans. In all three Asian markets, a significant part of the push comes from weak job markets for young people.
 
-**The agent layer is moving from developers to everyone.** 2026 brought agents to non-developers:
-- Anthropic launched Claude Cowork for non-coders in January and extended it to web and mobile in July ([TechCrunch](https://techcrunch.com/2026/07/07/the-coding-agent-wars-are-spilling-into-the-rest-of-the-office-claude-cowork/)).
-- OpenAI released ChatGPT Work on 2026-07-09 and a small-business program on 2026-07-21 ([OpenAI](https://openai.com/index/introducing-chatgpt-small-business-program/), [Inc.](https://www.inc.com/chloe-aiello/openai-just-unveiled-a-massive-push-to-turn-small-business-owners-into-ai-power-users/91377329)).
-- Meta bought the general agent Manus for about $2B ([CNBC](https://www.cnbc.com/2026/01/21/metas-2b-manus-deal-pushes-away-some-customers-sad-it-happened.html)).
+**AI is turning "solo" from a lifestyle into a company structure.** Founders now use agents to cover roles they would once have hired for. Stripe says 44% of its AI-focused startups are building agents. Upwork describes an emerging role it calls the "AI orchestrator."
 
-In open source, OpenClaw (a personal agent) passed 250K GitHub stars. Paperclip, which organizes agents as a company, passed 30K stars in three weeks after its March 2026 launch and has about 74–77K now ([Contabo](https://contabo.com/blog/what-is-paperclip-ai/), [paperclip.ing](https://paperclip.ing/)).
+**Big platforms are moving in:**
+- OpenAI launched ChatGPT Work on 2026-07-09 and a small-business program on 2026-07-21, with Shopify, Intuit and Wix partners ([OpenAI](https://openai.com/index/introducing-chatgpt-small-business-program/)).
+- Anthropic's Claude Cowork reached web and mobile in July ([TechCrunch](https://techcrunch.com/2026/07/07/the-coding-agent-wars-are-spilling-into-the-rest-of-the-office-claude-cowork/)).
+- Upstream Paperclip now pitches "a team of agents for every person" ([paperclip.ing](https://paperclip.ing/)).
 
-**Hype is ahead of reliability.** Gartner predicts that more than 40% of agentic AI projects will be canceled by the end of 2027, and estimates that only about 130 of the thousands of "agentic" vendors are real ([Gartner](https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027)). On TheAgentCompany benchmark, which simulates realistic office work, the best agent finished only about 30% of tasks. Admin, finance and data tasks scored lowest ([NeurIPS paper](https://papers.nips.cc/paper_files/paper/2025/file/0d744742f6fac4d1134c019b7cef3c8a-Paper-Datasets_and_Benchmarks_Track.pdf)). Costs are falling fast, though: Epoch AI measures inference prices at constant capability dropping about 10x per year ([Epoch AI](https://epoch.ai/data-insights/llm-inference-price-trends)). A product that is only marginally profitable today will have much better margins in 12–24 months.
+**Capability is climbing fast, but reliability lags:**
+- METR measures the length of tasks agents can finish with 50% success doubling roughly every 4–7 months ([METR](https://metr.org/time-horizons/)).
+- Consistency is weaker than one-off success. On τ-bench, pass^8 (succeeding on all 8 of 8 tries) fell about 60% below pass^1 ([Sierra](https://sierra.ai/blog/benchmarking-ai-agents)).
+- Gartner expects more than 40% of agentic AI projects to be canceled by 2027 ([Gartner](https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027)).
+- **Implication:** the product that makes agents *dependable* for non-experts wins, not the one that makes them most autonomous.
 
 ### Market sizing (estimates; assumptions stated)
 
 | Layer | Definition | Math | Size |
 |---|---|---|---|
-| **TAM** (US) | All US nonemployer businesses at a full AI-stack budget | 30.4M × $1,200/yr ($100/mo) | **≈ $36B/yr** |
-| **SAM** | Solo businesses that work mostly online, in English-speaking markets, and could delegate operations to agents | ~10M × $600/yr ($50/mo) | **≈ $6B/yr** |
-| **SOM** (3–5 yrs) | Realistic paid share for a well-executed new entrant | 100K–250K paying users × ~$600/yr | **≈ $60M–$150M ARR** |
+| **TAM (US)** | All US nonemployers at an AI-operations budget | 30.4M × $600/yr | ≈ **$18B/yr** |
+| **SAM (US)** | Solo businesses in the 13 knowledge-service segments | 7.45M × $600/yr | ≈ **$4.5B/yr** |
+| **Core SAM (US)** | Segment businesses earning ≥$50K a year (the buyers who pay) | 1.63M × $948/yr ($79/mo) | ≈ **$1.5B/yr** |
+| **SOM (3–5 yrs)** | Realistic paid share, global | 100K–250K paying × ~$700/yr | ≈ **$70M–$175M ARR** |
 
-The SOM is anchored to comparable companies: Sintra reached 40K paying customers in about 12 months, Polsia about 7.6K in about 5 months, and Lovable far more. Global demand (UK, EU, India, Southeast Asia, Latin America; China is hard for a foreign entrant) could multiply the SAM by 2–3x. Treat all three rows as order-of-magnitude figures, not forecasts.
+The SOM rests on comparable companies:
+- Sintra reached ~40K paying customers and ~$12M ARR within 12 months ([Tech.eu](https://tech.eu/2025/06/10/lithuanian-ai-startup-sintra-secures-17m-seed-empowering-smbs-with-ai-helpers/)).
+- Marblism claims 40,000+ businesses.
+- Polsia reports about 7.6K customers in about 5 months.
+
+International markets (UK, EU, India, Korea, Southeast Asia) could plausibly add 1–2x the US SAM; China is largely closed to foreign software. All sizing figures are order-of-magnitude estimates, not forecasts.
 
 ---
 
-## 2. Target Audience
+## 2. Positioning: "The Platform for One Person Companies". Is it feasible?
 
-### Primary segment: "operators," people who already run a solo business
+### 2.1 Search demand (Google Trends, pulled 2026-09-26)
 
-- **Demographics:** Ages 28–55. Service businesses (consultants, coaches, agencies of one, designers, bookkeepers), creators, and small e-commerce or Etsy/Shopify sellers. Professional, scientific and technical services is the largest nonemployer category, with about 4.0M US establishments. Women own 42.7% of nonemployer businesses ([Founder Reports / Census](https://founderreports.com/solopreneur-statistics/)).
-- **Psychographics:** Short on time rather than skill. They value independence and control. They are wary of hype and afraid of looking unprofessional to clients. They already pay for a few SaaS tools.
-- **Key needs, the jobs they want done:**
-  1. Marketing and content consistency, which is the #1 current AI use at 64%.
-  2. Inbox triage, follow-ups and customer replies (37% use AI for customer service).
-  3. Lead generation and sales outreach (36%).
-  4. Admin: invoices, bookkeeping prep, scheduling.
-  5. Getting a clear picture of "what should I do this week to grow."
-- **Buying behavior:** Self-serve, credit card, monthly plans with annual discounts. Budget benchmarks: a realistic solopreneur AI stack costs $50–$200/mo, and a common guideline is to keep AI spend under about 2% of revenue ([BizStackHub](https://www.bizstackhub.com/guides/solopreneur-tech-stack-2026), [Stealth Agents](https://stealthagents.com/research/ai-adoption-statistics-small-businesses)). They discover tools through YouTube, TikTok, newsletters, communities (Reddit, Indie Hackers, Skool), and app marketplaces such as the Shopify App Store.
-- **Barriers:** 82% of SMBs report at least one barrier to deeper AI use. The top barriers are data security (33%, up from 23% in 2025) and accuracy (31%). 78% don't fully trust AI with even low-level tasks without oversight. The learning curve is a barrier for 31% ([Small Business Expo](https://www.thesmallbusinessexpo.com/blog/the-trust-gap-small-businesses-are-using-ai-more-but-still-dont-fully-trust-it/), [Simply Business](https://www.simplybusiness.com/resource/small-businesses-are-using-ai-but-theyre-not-letting-it-run-the-show-2026-outlook/), [KVIA/Stacker](https://kvia.com/stacker-small-business/2026/07/16/3-4-of-small-businesses-dont-trust-ai-for-basic-tasks/)).
+**Worldwide interest by quarter** (same scale across terms; 100 = peak):
 
-> **Design implication:** This audience does not want "autonomy." They want work done that they can check. Approvals are not friction for them; approvals are the trust mechanism.
-
-### Secondary segments
-
-| Segment | Size signal | Why attractive | Why harder |
+| Quarter | "one person company" | "one person business" | "solopreneur" |
 |---|---|---|---|
-| **Aspiring founders** (idea, no business yet) | Near-record business applications; 36% solo-founder share | Largest top-of-funnel; emotionally motivated; viral "I launched X" stories | Low willingness to pay, high churn, most ideas fail (BLS: 22% of new establishments close in year 1, ~49% by year 5 — [LendingTree/BLS](https://www.lendingtree.com/business/small/failure-rate/)); FTC income-claim risk |
-| **Side-hustlers / "occasional independents"** | 37.4M in the US (MBO 2025) | Huge; growing fastest | Price-sensitive; intermittent use |
-| **Technical indie hackers** | Paperclip's current base | Early adopters, evangelists, template authors | Will self-host Paperclip for free; not the "everyone" target |
-| **International solo founders** (India, SEA, LatAm; China OPC) | 57% of new Stripe companies are outside the US; 7M new Chinese solo companies/yr | Mobile-first and messaging-first (WhatsApp/iMessage) markets | Localization, payments, regulation; China is effectively closed |
+| Q1 2024 | 2.2 | 1.9 | 0.2 |
+| Q1 2025 | 2.2 | 2.1 | 1.0 |
+| Q3 2025 | 2.8 | 2.5 | 1.1 |
+| Q1 2026 | 4.4 | 4.1 | 1.4 |
+| Q2 2026 | **5.4** | **4.8** | **2.1** |
+| Q3 2026 (partial) | 3.8 | 3.1 | 1.1 |
 
----
+The Q3 2026 row covers only part of the quarter, and every term tracked (including "AI agents") dipped by a similar amount. Read it as noise, not a reversal.
 
-## 3. Competitive Landscape
+**United States:** "one person company" searches outnumber "solopreneur" searches by roughly 4–7x, and "one person company" rose from ~46 to ~85 (Q4 2023 → Q2 2026).
 
-The market has split into four groups. None of them yet combines *simple + trustworthy + outcome-focused + owner-controlled*.
+**Top countries for "one person company" (last 12 months):** US 100, UAE 93, Singapore 68, Ethiopia 68, India 51, Kenya 48, South Africa 46, South Korea 46, Nigeria 44, Philippines 42, China 40, UK 35.
 
-| Competitor | Category | Position | Pricing | Strengths | Weaknesses |
-|---|---|---|---|---|---|
-| **Polsia** | Autonomous company launcher | Challenger (hype leader) | $49/mo + 20% revenue share | ~$10M ARR self-reported and 7.6K customers; raised $30M at ~$250M valuation; strong story ([AIN](https://en.ain.ua/2026/05/25/ai-startup-polsia-with-no-employees-raised-30m-in-funding/)) | Trustpilot 1.8/5, ~80% one-star; public "hollow shells" critique; assets locked to its infrastructure; unverified numbers ([Trustpilot](https://www.trustpilot.com/review/polsia.com), [X/panphora](https://x.com/panphora/status/2039792403788292156)) |
-| **NanoCorp** (YC, phospho) | Autonomous company launcher | Niche challenger | $30/mo + 20% withdrawal fee | $1M ARR in 55 days with no paid acquisition; transparent public revenue leaderboard ([HN](https://news.ycombinator.com/item?id=48062033)) | <1% of created companies have ever earned anything, per its own update; no demand validation before running ads and cold email ([preuve.ai](https://preuve.ai/blog/nanocorp-review)) |
-| **Sintra** | AI-employee bundle | Leader in SMB bundles | ~$39–$97/mo; 250 credits | 40K+ paying customers, ~$12M ARR in year 1; 12 named "helpers"; $17M seed ([Tech.eu](https://tech.eu/2025/06/10/lithuanian-ai-startup-sintra-secures-17m-seed-empowering-smbs-with-ai-helpers/)) | Mostly chat-and-draft assistance; limited execution or orchestration; credit caps |
-| **Marblism** | AI-employee bundle | Value challenger | $24–$44/mo for 6 "employees" | Cheap; covers email, social, SEO, calls, contracts ([mrktcorrect](https://mrktcorrect.com/blog/marblism-pricing)) | Output quality and data risks noted in reviews; shallow integrations |
-| **Motion** | Agentic work suite for SMBs | Well-funded challenger | $19–$29/seat; AI Employees $99–$599/mo | $60M at $550M valuation; AI Employees from $0 to 8-figure ARR in 3 months ([Motion](https://www.usemotion.com/blog/motion-raises-60m-to-build-the-agentic-work-suite-for-businesses)) | Aimed at small *teams*; credit-based pricing confuses users ([Temporal](https://temporal.day/blog/motion-pricing-2026-why-users-leaving)) |
-| **Lindy** | No-code agent builder | Established | $49.99–$199.99/mo, credits | Flexible; many integrations; $50M raised | Builder mindset (user designs the flows); credit-meter anxiety ([usecarly](https://www.usecarly.com/blog/lindy-ai-pricing/)) |
-| **Relevance AI / Gumloop / Zapier Agents / n8n** | Workflow and agent builders | Leaders in automation | $19–$199+/mo; Relevance has moved to enterprise | Powerful, many connectors | Require systems thinking; not "for everyone" ([work-management.org](https://work-management.org/automation/ai-agents/relevance-ai-review/)) |
-| **Paperclip** (this repo's upstream) | Open-source agent orchestration | Developer leader | Free (MIT); third-party hosting ~$21–$69/mo | ~74–77K stars; org chart, budgets, approvals, governance; rich connection catalog | Needs technical comfort; unpredictable token costs; cost shows as zero for subscription-billed agents ([eesel](https://www.eesel.ai/blog/paperclip-ai-review), [issue #339](https://github.com/paperclipai/paperclip/issues/339)) |
-| **OpenAI** (ChatGPT Work + Small Business program) | Platform | Giant entrant | Bundled in ChatGPT plans | Distribution to hundreds of millions of users; Shopify, Intuit, Wix and Dropbox partners; free training ([OpenAI](https://openai.com/index/introducing-chatgpt-small-business-program/)) | General-purpose, not tuned to running a business; no company-level structure |
-| **Anthropic Claude Cowork** | Platform | Giant entrant | Claude subscriptions | Strong agent quality; desktop, web and mobile ([Aragon](https://aragonresearch.com/anthropic-claude-cowork/)) | Built around tasks and files, not "run my business" |
-| **Shopify Sidekick / Intuit QuickBooks agents / HubSpot Breeze / Wix, Durable** | Vertical incumbents | Built into existing tools | Included in plans | Own the data and the workflow; zero switching cost ([Shopify](https://www.shopify.com/sidekick), [Intuit](https://investors.intuit.com/news-events/press-releases/detail/1258/intuit-introduces-ground-breaking-virtual-team-of-ai-agents-to-fuel-growth-for-businesses)) | Each covers only its own area (store, books, CRM, site) |
-| **OpenClaw / Genspark Claw / Manus (Meta)** | General personal agents | Viral, horizontal | Free to ~$20–$200/mo | Massive awareness; broad abilities | Security problems (the ClawHavoc supply-chain malware campaign) and actions users didn't ask for ([Kaspersky](https://www.kaspersky.com/blog/openclaw-vulnerabilities-exposed/55263/), [CrowdStrike](https://www.crowdstrike.com/en-us/blog/what-security-teams-need-to-know-about-openclaw-ai-super-agent/)) |
+**What people search for:**
 
-### Pricing landscape
-
-- **Flat bundles:** Marblism ($24–44), Sintra (~$39–97), Lindy ($50–200). These have become the price points non-technical buyers expect.
-- **Revenue share:** Polsia (20%) and NanoCorp (20% of withdrawals). This makes the company's incentives look aligned with the user's, but it taxes successful users heavily and creates trust and lock-in complaints.
-- **Credits/meters:** Lindy, Motion, Gumloop, Sintra. These are a common complaint among non-technical buyers because they can't predict their bill.
-- **Free and bundled:** OpenAI, Shopify, Intuit and HubSpot bundle agents into products the user already pays for. This puts a ceiling on what a standalone tool can charge for commodity tasks.
-
-### Competitive insights
-
-1. **"Autonomous company" products sell the dream and then disappoint.** Both leaders charge revenue share, and both have public evidence of poor outcomes. The first product to be honest about outcomes can win trust *and* press coverage.
-2. **AI-employee bundles won on simplicity, not capability.** Named personas, flat price and no setup were enough to reach tens of thousands of customers. The weak point is depth: they help with tasks, but they don't coordinate work toward a goal.
-3. **The orchestration model (Paperclip) has not reached non-developers.** Paperclip's strongest ideas are goal hierarchy, budgets, approvals, activity logging and "why am I doing this" traceability. These are exactly what a non-expert needs for *trust*, but today they come with developer-level complexity. The third-party hosting market (PaperclipCloud, Hostinger one-click, RepoCloud, Zeabur) shows people want it managed.
-4. **Upstream Paperclip is itself moving toward mainstream users.** Its site now reads "The app people use to manage AI agents for work." The repo's `doc/PRODUCT.md` already sets goals of "time-to-first-success under 5 minutes" and "do not force users to understand provider/API-key plumbing," and the repo has Agent Chat and cloud-readiness work in progress. A fork should expect upstream to become a competitor over time.
-
----
-
-## 4. Market Opportunities
-
-| # | Opportunity | Market size | Competition | Feasibility | Priority |
-|---|---|---|---|---|---|
-| 1 | **"Your first AI team" for existing solo businesses**: recurring operations (content, inbox, follow-ups, leads, admin) with approvals and a weekly outcome report | High | Medium (bundles are shallow; platforms are generic) | High | **1** |
-| 2 | **Honest guided launch**: idea → demand check → offer → first customer, with go/no-go gates instead of autopilot | High (top of funnel) | High (Polsia, NanoCorp, OpenAI) | Medium | **2** |
-| 3 | **Vertical playbook packs** (coach/consultant, Shopify seller, local service, creator) distributed through app marketplaces | Medium | Low–Medium | High | **3** |
-| 4 | **Messaging-first solo operations** (iMessage/WhatsApp/Telegram approvals and daily brief) for mobile-first markets | Medium–High | Low | Medium (the repo already has an experimental iMessage channel) | **3** |
-| 5 | **Managed hosted Paperclip** for developers who don't want to self-host | Low–Medium | High (commodity hosts from ~$5–$69/mo) | High | 5 |
-
-### Recommended focus: Opportunity 1, with 2 as a later way to acquire users
-
-- **Existing revenue means willingness to pay and retention.** Operators already feel the pain and can measure the result (hours saved, posts shipped, leads contacted). AI apps churn about 30% faster than non-AI apps, with 21.1% annual retention versus 30.7% ([RevenueCat via TechCrunch](https://techcrunch.com/2026/03/10/ai-powered-apps-struggle-with-long-term-retention-new-report-shows)). Recurring operations are the strongest protection against that.
-- **Lower regulatory risk.** Helping an existing business operate is not a "business opportunity" sale, so it avoids the FTC's income-claim enforcement area.
-- **The launch mode becomes more credible later.** Once the product has data on what works for real operators, a guided launch mode can use those proven playbooks instead of generic autopilot.
-
-### Differentiation strategies
-
-| Lever | Strategy |
+| Term | Top related queries |
 |---|---|
-| **Customer experience** (primary) | Show outcomes, not agents. Five questions → a business profile → the first useful deliverable in under 5 minutes. A mobile "Needs you" inbox. Plain-English weekly report. |
-| **Trust and safety** (primary) | Approvals on by default for anything that leaves the building: sending, posting, spending, deleting. A per-action "trust ladder" that graduates to auto after a track record. Reversible actions. Hard spend caps. |
-| **Honesty as brand** | No income claims. A demand check before launch spending. The weekly report says what *didn't* work. Publish anonymized outcome benchmarks. |
-| **Price positioning** | Flat monthly plans with a generous included allowance, **no revenue share**, no API keys. The user owns their domain, data and content, and can export everything. |
-| **Neutrality** | Works across model providers and alongside the tools users already have (Gmail, Shopify, Stripe, QuickBooks, Canva). Complements the platforms instead of replacing them. |
-| **Distribution** | Creator-led YouTube/TikTok "build in public" content; template marketplace; Shopify/Wix app listings; partnerships with solopreneur communities and courses. |
+| "one person company" | "what is one person company" (100), "meaning" (14), "in India" (13), "examples" (8), "registration" (6) |
+| "solopreneur" | "quickbooks" (100), "quickbooks solopreneur" (99), "what is solopreneur" (65), "the ai solopreneur" (48, rising) |
 
----
+What this tells us:
+- ✅ **The term is growing, international, and nobody commercial owns it.** People are still asking what it *means*. A company that defines it through content, a yearly "State of One-Person Companies" report and a community can own the category.
+- ✅ **"Company" signals ambition and legitimacy** ("I run a company"), and it fits the agent-team idea naturally: you are the CEO, and the agents are your team. It is also Paperclip's own mental model.
+- ⚠️ **In India, OPC is a legal entity type.** There, a lot of search traffic is people looking to *register* an OPC (legal-services intent), and SEO competition comes from registration firms. This can also be an opportunity: registered OPC owners are a precise target group to partner on.
+- ⚠️ **"Solopreneur" is being claimed by incumbents.** Intuit's QuickBooks Solopreneur dominates its related searches. That is another reason to lead with "One Person Company" rather than "solopreneur."
 
-## 5. Feasibility Analysis
+### 2.2 Naming, trademark and domains
 
-### 5.1 Technical feasibility: High, if built on Paperclip
-
-Paperclip is MIT-licensed. It already provides the hardest pieces of the control plane:
-
-| Needed capability | Already in this repo |
-|---|---|
-| Goal → task hierarchy, "why am I doing this" | Issues with parent/sub-issues traced to the company goal (`doc/PRODUCT.md`) |
-| Budget hard-stops | Per-agent budgets with auto-pause (`AGENTS.md` §5 invariants) |
-| Approvals and governance | Board approval gates for governed actions |
-| Audit trail | Activity logging for all mutating actions |
-| Integrations | Connections catalog: Gmail, Google Workspace, Slack, GitHub, Vercel, Fireflies, remote MCP, and more (`doc/connections/`) |
-| Conversational surface | Agent Chat (experimental), including plan → task handoff |
-| Mobile/messaging | Experimental iMessage (Photon) channel |
-| Templates | Teams catalog (`packages/teams-catalog`: company-defaults, product, software-development, content) and skills catalog |
-
-**What is missing for this audience** is mostly product and hosting work, not new infrastructure:
-
-1. A hosted, multi-tenant runtime with bundled model access, so users never see adapters or API keys.
-2. A new, much simpler UI layer (see the translation table below).
-3. Business-oriented playbooks instead of software-development teams.
-4. Event-driven wake-ups (new email, new order) in place of fixed-interval heartbeats, to control cost.
-5. Billing, onboarding and outcome measurement.
-
-**Build-strategy recommendation:** Prototype on Paperclip for speed. Treat it as an engine behind a clean API boundary so the consumer UX is not tied to Paperclip's internal data model. Upstream moves fast (PR numbers are past #14,000 and dated releases ship often), so keeping a deep fork in sync would be expensive. The alternative is to build fresh on a managed agent runtime from a model provider: that means less structure to inherit but also less to maintain. Decide after the concierge test in §7.
-
-### 5.2 UX translation: from Paperclip concepts to what a non-expert sees
-
-| Paperclip concept | What a non-technical solo founder should see |
-|---|---|
-| Company + goal | "My business" + "This month's goal" (for example, *get 10 paying clients*) |
-| CEO agent + org chart | A single "chief of staff" and 3 preset teammates. **No org chart** unless the user asks. |
-| Adapters (Claude Code, Codex, OpenClaw…) | Hidden. Model access is bundled. |
-| Heartbeats | "Checks in every morning" or "Wakes up when a new email or order arrives" |
-| Issues / sub-issues | "This week's plan": a checklist that expands on tap |
-| Token budgets | "You've used $18 of your $40 monthly allowance." Never tokens. |
-| Approvals / board | A **Needs you** inbox with Approve / Edit / Skip, one tap on a phone |
-| Work products | A **Results** gallery: posts, emails, documents, site pages, leads |
-| Skills / connections | "Connect Gmail", "Connect Shopify": one-click OAuth, with plain-language permission explanations |
-| Run transcripts / logs | "What happened and why" in one paragraph; raw logs hidden three layers deep (matches Paperclip's own progressive-disclosure goal) |
-
-**Trust ladder** (autonomy tracked separately for each action type):
-Draft only → Approve each → Auto for low-risk actions with a daily digest → Auto within spend and volume caps.
-The product suggests moving up one level after a streak of approvals with no edits, and never auto-promotes actions that are irreversible or that move money.
-
-### 5.3 Unit economics (illustrative model; assumptions stated)
-
-These are assumptions for planning, not measured data.
-
-- **Active-user workload:** About 150–200 agent runs per month (daily brief, inbox triage, content drafts, lead research).
-- **Cost per run:** About $0.05–$0.30. This assumes mid-tier models with prompt caching and multi-step tool use, and small models for triage and classification.
-- **Inference cost per active user:** Roughly **$10–$50/month**, depending mainly on model routing and how long research runs take. Add about $2–5 of infrastructure.
-- **Result:**
-  - At a $49–$79 core plan, gross margin is about 40–80%.
-  - A $29 plan only works with strict allowances and routing.
-  - Heavy users need hard caps or top-ups. Paperclip users already report surprise bills from aggressive heartbeats ([eesel](https://www.eesel.ai/blog/paperclip-ai-review)).
-- **Trend:** Prices at constant capability fall about 10x per year ([Epoch AI](https://epoch.ai/data-insights/llm-inference-price-trends)), so margins should improve quickly. That argues for pricing on value now and not racing to the bottom.
-
-### 5.4 Suggested pricing
-
-| Plan | Price | For |
+| Check | Finding | Implication |
 |---|---|---|
-| Starter | $29/mo | 1 business, chief of staff + 2 teammates, drafts and approvals, small allowance |
-| Pro | $79/mo | Full team, connected channels, auto-mode on the trust ladder, larger allowance |
-| Business | $199/mo | Multiple brands or businesses, higher caps, priority models |
+| USPTO search for "one person company" | **No live or dead marks found** ([tmsearch.uspto.gov](https://tmsearch.uspto.gov/search/search-results?query=%22one%20person%20company%22&section=default)) | Available, but a descriptive or generic phrase is likely to be refused registration. You can *use* it; you probably can't *own* it. |
+| "OPC" | The OPC Foundation holds registered "OPC" / "OPC UA" marks for industrial-automation software ([OPC Foundation](https://opcfoundation.org/terms-and-conditions/)) | Don't make "OPC" the product's brand. Use it only as shorthand for the category. |
+| India | "One Person Company" is a statutory entity type ([MCA](https://www.mca.gov.in/content/mca/global/en/help-faq/faqs/company-services/incorporation/one-person-company.html)) | Generic in India. Use carefully in copy; never imply legal incorporation services unless you offer them. |
+| Domains (RDAP, 2026-09-26) | `onepersoncompany.com` registered 2012; `opc.com` 1994; `opc.ai` 2018; `companyofone.ai` 2025; **`myopc.ai` Feb 2026, `onepersonco.ai` Apr 2026, `oneperson.ai` May 2026**; `onepersoncompany.co` and `.io` returned no registration record (possibly available; .ai lookups for the exact phrase were rate-limited) | Others started claiming this vocabulary in 2026. That confirms the trend and means category terms won't make a distinctive brand. |
+| Related concept | "Company of One" is the title of Paul Jarvis's 2019 book | Avoid it as a name. It works as a cultural reference. |
 
-No revenue share, 14-day trial, and about 30% off for annual billing. This sits between Marblism/Sintra and Motion AI Employees, and the "no revenue share, you own everything" message sets it apart from Polsia and NanoCorp.
+### 2.3 Recommendation
+
+- **Own the category, brand the product.** Pattern: **"[Distinct brand]: the platform for one-person companies."** Build category assets:
+  - A yearly *State of One-Person Companies* report. The Census NES analysis in this document is a starter dataset.
+  - An OPC founder community with public "company pages."
+  - Industry kits.
+  - A public outcomes index that shares real, anonymized results.
+- **Localize the phrase:**
+
+  | Market | Phrasing |
+  |---|---|
+  | US / UK | "one-person company" and "one-person business" |
+  | India | "one-person company", with care around the legal meaning |
+  | Korea | "1인 기업" |
+  | Mandarin-speaking diaspora and Southeast Asia | "OPC" is recognized from Chinese media |
+
+- **Never sell income.** The category sits next to the "AI passive income" schemes the FTC shut down under Operation AI Comply (Click Profit; Ascend Ecom, at least $25M in losses; FBA Machine, about $15M) ([FTC](https://www.ftc.gov/news-events/news/press-releases/2025/03/ftc-acts-stop-click-profit-online-business-opportunity-has-cost-consumers-least-14-million), [Benesch](https://www.beneschlaw.com/insight/one-year-in-ftcs-operation-ai-comply-continues-under-new-administration-signaling-enduring-enforcement-focus/)). Position it as "run your company like a team of ten," never "earn while you sleep." Polsia's headline is literally "AI That Runs Your Company While You Sleep."
 
 ---
 
-## 6. Risks & Challenges
+## 3. Target Market
+
+### 3.1 US segment sizing (Census NES 2023; primary data)
+
+| Segment | NAICS | Nonemployers | Avg receipts | ≥ $25K | ≥ $50K (share) |
+|---|---|---|---|---|---|
+| Consultants (management, scientific, technical) | 5416 | 1,081,961 | $59.8K | 442,474 | 284,442 (26%) |
+| Property agents & brokers | 5312 | 824,003 | $63.6K | 436,678 | 279,718 (34%) |
+| Designers (graphic, interior, other) | 5414 | 277,731 | $46.1K | 98,172 | 59,084 (21%) |
+| Creators (independent artists, writers, performers) | 7115 | 1,088,020 | $31.0K | 253,818 | 127,906 (12%) |
+| Marketing, advertising and PR freelancers | 5418 | 207,863 | $60.8K | 82,944 | 53,175 (26%) |
+| IT and software freelancers | 5415 | 343,329 | $60.0K | 144,880 | 95,641 (28%) |
+| Bookkeepers, accountants, tax preparers | 5412 | 396,812 | $34.5K | 130,959 | 71,908 (18%) |
+| Photographers | 54192 | 236,666 | $28.8K | 73,093 | 39,121 (17%) |
+| Therapists and counselors | 62133 | 226,306 | $56.1K | 129,551 | 88,138 (39%) |
+| Lawyers (solo) | 5411 | 274,000 | $84.5K | 147,901 | 106,824 (39%) |
+| Tutors and instructors | 611 | 893,520 | $18.3K | 149,553 | 69,241 (8%) |
+| Other personal services (includes many coaches) | 81299 | 755,943 | $36.0K | 214,124 | 113,344 (15%) |
+| All other professional services | 54199 | 841,723 | $69.4K | 366,293 | 239,789 (28%) |
+| **Total, 13 segments** | | **7,447,877** | **$47.7K** | **2,670,440** | **1,628,331** |
+
+Coaches don't have their own NAICS code. They are spread across 5416, 611 and 81299. The ICF counts **122,974 coach practitioners worldwide** with $5.34B in revenue, and only **6%** use AI coaching tools today ([ICF 2025](https://coachingfederation.org/blog/coaching-industry-continues-global-growth-with-5-34-billion-usd-revenue-new-research-reveals/)).
+
+For creators, Goldman Sachs estimates **50M creators globally**. About half earn under $15K a year and about 4% earn over $100K ([Goldman Sachs](https://www.goldmansachs.com/insights/articles/the-creator-economy-could-approach-half-a-trillion-dollars-by-2027)).
+
+For property agents, NAR had **1.44M members** as of June 2026. Nearly half use AI daily (23%) or weekly (25%), and 81% adopt technology mainly to save time ([NAR](https://www.nar.realtor/newsroom/realtors-adopt-technology-to-save-time-and-improve-the-client-experience-nar-report-finds)).
+
+### 3.2 Who to serve first
+
+| Group | Size (US) | Pay ability | Pain intensity | Fit | Priority |
+|---|---|---|---|---|---|
+| **Established OPC operators**: ≥$50K receipts, knowledge services | ~1.6M in target segments | High | High (time; inconsistent marketing and follow-up) | Recurring, checkable workflows | **1: beachhead** |
+| **Growing operators**: $25–50K, want to reach full-time | ~1.0M in target segments | Medium | Very high (pipeline) | Growth kits: leads, content | 2 |
+| **Aspiring founders**: idea stage | Near-record business applications | Low | High (overwhelm) | Guided launch with demand checks | 3: acquisition funnel |
+| **Side hustlers / occasional independents** | 37.4M (MBO) | Low | Medium | Light plan | 4 |
+| **International OPC** (India legal OPCs, Korea 1인 기업, Southeast Asia) | 1.16M Korea; tens of thousands of India OPCs | Medium | High | Messaging-first; localized kits | Expansion |
+
+### 3.3 Primary personas
+
+| Persona | Snapshot | Jobs to be done | What they'll pay for |
+|---|---|---|---|
+| **Maya, the independent consultant** | 41, ex-corporate, $120K receipts, 3–5 clients | Keep pipeline warm, publish thought leadership, prepare proposals, invoice and follow up | Pipeline that doesn't depend on her memory; proposals in her voice |
+| **Leo, the property agent** | 35, 18 deals a year, leads from portals | Respond to leads in minutes, launch listings, run nurture drips, stay compliant | Speed-to-lead; listing launch kit; never missing a follow-up |
+| **Ana, the coach / creator** | 33, 12K followers, $60K from programs | Weekly content across platforms, community replies, launch calendar, client onboarding | Consistent content without burnout; launches that run on time |
+
+What all three share: they are **non-technical, short on time, protective of their reputation, and want to approve anything that goes out.** They measure value in *hours saved and clients won*, not in AI features.
+
+---
+
+## 4. Competitive Landscape (verified 2026-09-26)
+
+| Competitor | Category | Pricing (verified) | Strengths | Weaknesses |
+|---|---|---|---|---|
+| **Polsia** | Autonomous company launcher | $49/mo + 20% revenue share (press); "free to start" (site) | Strong story ("Polsia is your first employee"); $30M raised at ~$250M valuation ([AIN](https://en.ain.ua/2026/05/25/ai-startup-polsia-with-no-employees-raised-30m-in-funding/)) | Trustpilot 3.2/5 on 279 reviews, 35% one-star; complaints about credits, broken sites, domain lock-in ([Trustpilot](https://www.trustpilot.com/review/polsia.com)); "while you sleep" framing |
+| **NanoCorp** (YC) | Autonomous company launcher | $30/mo for 30 credits + **20% withdrawal fee** ([pricing](https://www.nanocorp.so/pricing)) | Transparent public leaderboard; "no human in the loop" | 206 of 30,272 companies ever earned; $1,530 earned platform-wide in 30 days ([preuve.ai](https://preuve.ai/blog/nanocorp-review)) |
+| **Sintra** | AI-employee bundle | $97/mo list; $15.60–$48.50 on promotion; 250 credits ([pricing](https://sintra.ai/pricing)) | 12 named helpers; "zero technical setup"; ~40K paying customers | Chat-and-draft help; credit caps; runs on a single model |
+| **Marblism** | AI-employee bundle | **$24/mo** for 7 "employees" and 50 hours of work ([pricing](https://www.marblism.com/pricing)) | Cheapest; claims 40K+ businesses; receptionist and website included | Shallow orchestration; output-quality risk |
+| **Lindy** | Assistant / agent builder | $29.99 / $99.99 / $199.99 per user ([pricing](https://www.lindy.ai/pricing)) | Approvals built in; pauses when credits run out; iMessage; SOC 2 | Credit meter; built around teams and Slack |
+| **Motion** | Agentic work suite | $19–$29/seat; AI Employees $99–$599/mo | $60M at $550M valuation; AI Employees went from $0 to 8-figure ARR in 3 months ([Motion](https://www.usemotion.com/blog/motion-raises-60m-to-build-the-agentic-work-suite-for-businesses)) | Built for small teams, not solo owners; pricing complaints |
+| **Taskade Genesis** | "One-person company" workspace | Free; Pro $10/mo annual; up to $250 | Explicitly targets the one-person-company idea ([Taskade](https://www.taskade.com/blog/one-person-companies)) | A workspace or builder, not outcome-verified operations |
+| **Paperclip** (upstream, MIT) | Open-source orchestration | Free; hosted wrappers ~$12–$69/mo | 74K+ stars (per its site); budgets, governance; now "a team of agents for every person" | Self-hosted and technical; hosting wrappers struggling (Paperclip.inc closing 2026-10-02) |
+| **Lofty** | Vertical: real estate | **$299/mo** for solo agents | "Agentic OS" for real estate: lead, social and seller agents ([Ascendix](https://ascendix.com/blog/ai-real-estate-agents/)) | Expensive; one vertical only |
+| **Coachvox / Delphi** | Vertical: coaches and creators | $99/mo + **10%** (Coachvox); $99–$349 + **15%** (Delphi) | AI clones of the expert for their audience ([Personify](https://personify.fyi/blog/ai-clone-cost/)) | Revenue share; clone only, doesn't run the business |
+| **OpenAI ChatGPT Work** + small-business program | Platform | Bundled | Huge distribution; partners Shopify, Intuit, Wix; free training | General-purpose; no structure for running a company |
+| **Claude Cowork** | Platform | Claude plans | Strong agent quality | Task- and file-oriented, not a company operating layer |
+
+### 4.1 Market-gap matrix
+
+Legend: ✅ strong · ◐ partial · ❌ missing.
+
+| Capability a non-technical OPC needs | Launchers (Polsia, NanoCorp) | AI-employee bundles (Sintra, Marblism) | Builders (Lindy, Relevance, n8n) | Paperclip OSS | Platforms (ChatGPT Work, Cowork) | Vertical AI (Lofty, Coachvox) | **Target product** |
+|---|---|---|---|---|---|---|---|
+| Dead-simple, no setup | ✅ | ✅ | ◐ | ❌ | ✅ | ◐ | ✅ |
+| Coordinated multi-step work toward a goal | ◐ | ❌ | ◐ | ✅ | ◐ | ◐ | ✅ |
+| **Verified "done"** (definition of done, checks, grader) | ❌ | ❌ | ❌ | ◐ (completion reviews, watchdog) | ◐ | ❌ | ✅ |
+| **Approvals by default** for outward actions | ❌ (no human in loop) | ◐ | ✅ | ✅ | ◐ | ◐ | ✅ |
+| Predictable flat price (no token or credit anxiety) | ◐ | ◐ (credits) | ❌ (credits) | ❌ (tokens) | ✅ | ✅ | ✅ |
+| **No revenue share** | ❌ (20%) | ✅ | ✅ | ✅ | ✅ | ◐ (10–15% for coaches) | ✅ |
+| Industry workflows (not generic roles) | ❌ | ◐ (role-based) | ◐ (templates) | ◐ (ClipHub concept) | ❌ | ✅ (single vertical) | ✅ (kits) |
+| **Honest outcome reporting** | ◐ (NanoCorp leaderboard) | ❌ | ❌ | ◐ (costs) | ❌ | ◐ | ✅ |
+| Ownership and portability of assets and data | ❌ (lock-in complaints) | ◐ | ◐ | ✅ | ◐ | ◐ | ✅ |
+
+### 4.2 The six gaps
+
+1. **Outcome gap.** Everyone sells *activity* ("AI employees work 24/7"), and nobody guarantees *done*. The clearest evidence is NanoCorp's 0.68% ever-earned rate.
+2. **Trust gap.** 78% of small-business owners don't fully trust AI even with low-level tasks without oversight ([KVIA/Stacker](https://kvia.com/stacker-small-business/2026/07/16/3-4-of-small-businesses-dont-trust-ai-for-basic-tasks/)). Meanwhile the launchers advertise "no human in the loop."
+3. **Orchestration gap for non-experts.** Bundles give you helpers that don't coordinate with each other. Coordination tools are built for developers.
+4. **Economics gap.** Customers face revenue shares (Polsia 20%, NanoCorp 20%, Coachvox 10%, Delphi 15%), credit meters (Lindy, Sintra, Motion) and surprise token bills (Paperclip self-hosting).
+5. **Vertical gap.** Horizontal tools are organized around generic *roles* ("social media manager"). Real work is organized around *industry workflows* ("listing launch," "client onboarding"). Vertical tools that do exist cost a lot (Lofty $299) or cover one narrow job (clones).
+6. **Identity gap.** No Western platform owns "One Person Company" as a category and community. China's OPC communities show there is demand for the *belonging* side, not just the tooling.
+
+---
+
+## 5. Opportunities
+
+| # | Opportunity | Size | Competition | Feasibility | Priority |
+|---|---|---|---|---|---|
+| 1 | **OPC operating platform for established operators**: industry kits, outcome-verified workflows, approvals, flat price | High | Medium | High | **1** |
+| 2 | **OPC category and community**: yearly report, public founder pages, templates marketplace (ClipHub-style) | Medium (brand and acquisition) | Low | High | **2** |
+| 3 | **Guided "honest launch"** for aspiring founders: demand check → offer → first customer | High (funnel) | High | Medium | 3 |
+| 4 | **Messaging-first OPC** (iMessage, WhatsApp, Telegram approvals and briefs) for mobile-first markets | Medium–High | Low | Medium (repo has an experimental iMessage channel) | 3 |
+| 5 | **Partnerships**: India OPC registration services, Korean support centers, Shopify/Wix app stores, coaching schools, brokerages | Medium | Low | Medium | 4 |
+
+**Recommended focus:** Opportunity 1, with Opportunity 2 running in parallel as the brand engine:
+- Start with **three kits: Consultant, Coach/Creator, and Creative freelancer (designer/marketer).** They are digital, low-compliance and high-frequency.
+- Add **Property agent** next. The pain is strong and willingness to pay is proven (Lofty), but it needs TCPA and Fair Housing guardrails.
+- Details in the [kits document](./2026-09-26-opc-industry-kits.md).
+
+---
+
+## 6. Feasibility
+
+### 6.1 Technical: High (build on Paperclip, but change the abstraction)
+
+Paperclip already provides the hard infrastructure:
+- Goal → task hierarchy.
+- Budgets with hard stops.
+- Approvals ("Ask first").
+- **Native completion reviews** (a reviewer agent accepts or rejects the work).
+- A **task watchdog** that restarts wrongly stopped work.
+- **Recovery** with a three-attempt incident budget.
+- Durable continuation envelopes.
+- Eval families.
+- A connection catalog (Gmail, Google Workspace, Slack and others).
+- Agent Chat, and an experimental iMessage channel.
+- A templates concept (ClipHub / teams catalog).
+
+See `doc/execution-semantics.md`, `doc/TASK-WATCHDOG.md`, `doc/plans/2026-09-08-reliable-execution-recovery.md` and `doc/CLIPHUB.md`.
+
+**The needed change:** replace the *org chart of always-on agents with heartbeats* with **outcome-driven workflows triggered by events**, presented to the user as a team. That is both cheaper (§6.2) and more reliable. The full design, including a map from existing Paperclip features to gaps, is in the [reliability and cost document](./2026-09-26-opc-reliability-cost-harness.md).
+
+### 6.2 Unit economics: viable at $49–$79 per month
+
+Modeled with current Claude API list prices: Haiku 4.5 $1/$5, Sonnet 5 $2/$10, Opus 5.5 $4/$20 per million input/output tokens. Cache reads cost 0.1x the input price (0.05x on Opus 5.5); batch is 50% off ([Anthropic pricing](https://platform.claude.com/docs/en/about-claude/pricing)). The workload is one active OPC user per month: 30 daily briefs, 900 email classifications, 150 reply drafts, 13 long-form content pieces, 80 lead-research tasks, 4 weekly reports, and 260 grader passes.
+
+| Design | Inference $/user/month |
+|---|---|
+| **Routed models + prompt caching + event triggers** (recommended) | **≈ $31** (≈ $39 with a 25% allowance for revisions and retries) |
+| Routed models, no caching | ≈ $69 |
+| Everything on the frontier model, no caching | ≈ $114 |
+| Timed heartbeats: 5 agents every 3 hours | ≈ $163 |
+| Timed heartbeats: 5 agents every 30 minutes | **≈ $980** |
+
+At $79/mo, the recommended design leaves about a 40–50% gross margin for an *active* user after infrastructure (~$5) and payment fees (~3%). Lighter users cost far less. Two things push margins up over time: model prices at constant capability are falling about 10x a year ([Epoch AI](https://epoch.ai/data-insights/llm-inference-price-trends)), and newer models are cheaper per *solved* task (Sonnet 4.6 → 5 was 15% cheaper per solved task).
+
+### 6.3 Pricing recommendation
+
+| Plan | Price | Includes |
+|---|---|---|
+| Solo | $29/mo | 1 kit, core workflows, drafts plus approvals, light allowance (no web research) |
+| **Company** | **$79/mo** | All kits for your industry, research and leads, auto-mode on the trust ladder, messaging channels |
+| Company+ | $199/mo | Multiple brands, higher caps, priority models, custom kit |
+
+No revenue share, 14-day trial, and annual discount. Allowances are shown in dollars and in "jobs," never in tokens or credits.
+
+---
+
+## 7. Risks & Challenges
 
 | Risk | Impact | Likelihood | Mitigation |
 |---|---|---|---|
-| **Platform encroachment.** OpenAI's small-business push, Claude Cowork, Meta/Manus, and Shopify/Intuit/HubSpot agents inside tools users already own. | High | High | Don't compete on model access. Own the *business operating layer*: goal, plan, approvals, outcome report, cross-tool memory. Integrate with the platforms instead of replacing them. Stay multi-model. |
-| **Outcome gap and churn.** Agents produce activity, not results; AI apps churn about 30% faster. | High | High | Measure and report outcomes each week. Narrow playbooks with known-good patterns. Demand-check gates before spending. Retention KPIs from day one. |
-| **Agent reliability.** Realistic task success is about 30% on the benchmark; Gartner expects 40%+ project cancellations. | High | High (improving) | Human in the loop by default. Choose tasks agents do well (drafting, research, triage). Undo and version history. Honest "couldn't do this" states. |
-| **Regulatory: FTC.** "AI-powered passive income" schemes (Click Profit, Ascend Ecom ~$25M, FBA Machine ~$15M) have been shut down under Operation AI Comply ([FTC](https://www.ftc.gov/news-events/news/press-releases/2025/03/ftc-acts-stop-click-profit-online-business-opportunity-has-cost-consumers-least-14-million), [Benesch](https://www.beneschlaw.com/insight/one-year-in-ftcs-operation-ai-comply-continues-under-new-administration-signaling-enduring-enforcement-focus/)). | High | Medium (higher for a "launch a company" framing) | No income claims or earnings testimonials. Avoid "passive income" and "while you sleep" language. Have counsel review marketing. |
-| **Regulatory: EU AI Act Article 50.** Transparency rules for AI that talks to people and for synthetic content have applied since 2026-08-02; fines up to €15M or 3% ([Goodwin](https://www.goodwinlaw.com/en/insights/publications/2026/08/alerts-technology-dpc-eu-ai-act-transparency-obligations-now-in-force)). Outbound email and messaging laws (CAN-SPAM, TCPA, GDPR) also apply. | Medium | High | AI disclosure in customer-facing messages by default. Machine-readable content marking. Consent-aware outreach limits. |
-| **Safety incidents.** Destructive or unwanted actions (Replit agent deleting a production database; OpenClaw agents acting on their own; ClawHavoc malware in third-party skills) ([AIID #1152](https://incidentdatabase.ai/cite/1152/)). | High | Medium | Approval gates enforced in code, not in prompts. Sandboxing. A curated, signed skills catalog. Least-privilege OAuth scopes. Kill switch. |
-| **Token cost surprises** destroy trust with non-technical users. | Medium | High | Flat plans with visible allowances. Event-driven wake-ups. Model routing. Hard stops (Paperclip's budget auto-pause, restated in dollars). |
-| **Segment economics.** Solopreneurs are price-sensitive; many earn little (average nonemployer receipts ≈ $57K; over half of new Chinese one-person companies earn under $1K/mo). | Medium | High | Target operators with existing revenue first. Price on value (hours saved). Annual plans. |
-| **Upstream dependency / fork drift.** Paperclip moves fast and is heading toward mainstream users itself. | Medium | Medium | Loose coupling through APIs. Contribute generic improvements upstream. Keep a clear, different positioning (solo business outcomes vs. "manage agents for work"). |
-| **Low switching costs and a crowded field.** | Medium | High | Build durable business memory and context, integrations, a template community, and outcome data as the moat. |
-
-**Barriers to entry are low to build and high to *win*.** Capital needs for an MVP are modest. The hard parts are distribution, trust and retention.
+| Platforms bundle "good enough" agents (OpenAI small-business program, Cowork, Shopify, Intuit) | High | High | Own the operating layer and the category: kits, outcome contracts, approvals, business memory, community. Integrate with the platforms rather than compete with them. |
+| Outcome gap and churn (AI apps churn 30% faster; [RevenueCat](https://techcrunch.com/2026/03/10/ai-powered-apps-struggle-with-long-term-retention-new-report-shows)) | High | High | Outcome contracts, first-pass acceptance metric, weekly results report, kits built around recurring jobs |
+| Reliability and consistency (pass^k drop; 30% on realistic office tasks) | High | Medium (falling) | Outcome loop: checks, independent grader, human approval; narrow scopes; regression evals per kit |
+| Category association with "AI passive income" schemes | High | Medium | No income claims; FTC-reviewed copy; publish honest outcomes |
+| Trademark weakness of "One Person Company" / "OPC" conflict | Medium | High | Distinct brand plus a category descriptor; don't brand as "OPC" |
+| EU AI Act Article 50 (disclosing AI to people; marking synthetic content) since 2026-08-02; CAN-SPAM, TCPA, Fair Housing in verticals | Medium | High | AI disclosure by default in customer-facing messages; content marking; compliance guardrails in each kit |
+| Cost blowouts (heartbeat or loop sprawl) | Medium | Medium | Event triggers, caching, routing, hard dollar caps per job and per month |
+| Upstream Paperclip heading to the same audience | Medium | Medium | Loose coupling; contribute upstream; stay distinct as the OPC-specific, kit-driven product |
+| Segment economics (60.6% of nonemployers earn <$25K) | Medium | High | Target the ≥$50K operators first; low-cost Solo plan; annual pricing |
 
 ---
 
-## 7. Recommended Next Steps
+## 8. Recommended Next Steps
 
-### Phase 0: Validate before building (2–4 weeks)
+### Phase 0: Validate (3–4 weeks)
+- [ ] **Brand and category.** Pick 3 candidate brand names, run a trademark knock-out search (USPTO and EUIPO) plus domain checks, and write the "platform for one-person companies" copy.
+- [ ] **Landing-page test, 2×2:** positioning ("One Person Company" vs "solo business") × kit (Consultant vs Property agent). Measure waitlist conversion and pre-orders.
+- [ ] **30 interviews** across the Consultant, Coach/Creator, Designer and Property agent personas. Capture each person's *weekly recurring jobs* and their *approval threshold* (what they would let go out without looking).
+- [ ] **Concierge pilot:** 15 paying users at $49–$79. The Paperclip engine runs behind the scenes with the outcome loop, and a human spot-checks the work.
+- [ ] **Kill or pivot criteria:**
+  - Fewer than 30% of pilot users retained at week 4.
+  - First-pass acceptance of deliverables below 60%.
+  - Cost per accepted deliverable above $1.50 on routine jobs.
 
-- [ ] **20–30 interviews** with non-technical operators (coaches, consultants, Etsy/Shopify sellers, creators). Ask: what did you try, what did you stop paying for, and what would you trust an AI to send without looking?
-- [ ] **Two-variant landing page test**: "Your first AI team for the business you already run" vs. "Launch your one-person company with AI." Measure waitlist conversion and willingness to pre-pay.
-- [ ] **Concierge MVP**: run Paperclip behind the scenes for 10–15 paying users at $49–$99/mo, with a human reviewing outputs. Record which playbooks get approved without edits.
-- [ ] **Kill or pivot criteria:** fewer than 30% of concierge users retained at week 4, *or* fewer than half of drafts approved without heavy edits, *or* no playbook that users would pay for on its own.
+### Phase 1: MVP (8–12 weeks)
+- [ ] Onboarding interview that produces a business profile, then kit selection, then the first accepted deliverable in under 10 minutes.
+- [ ] Three kits: Consultant, Coach/Creator, Creative freelancer. Each has 4–6 recurring workflows with outcome contracts.
+- [ ] The outcome loop harness (checks, grader, approvals, trust ladder), a "Needs you" inbox, and a weekly results report.
+- [ ] Flat pricing with dollar and job allowances; hard caps.
+- [ ] Per-kit eval suites of 20–50 golden tasks, plus pass^3 consistency tracking.
 
-### Phase 1: MVP (about 8–12 weeks after validation)
-
-- [ ] A 5-question onboarding interview that produces a business profile document and a first deliverable in under 5 minutes.
-- [ ] Three playbooks: **Content engine** (weekly posts and newsletter drafts), **Inbox & follow-ups** (Gmail triage and reply drafts), **Lead finder** (research and outreach drafts), all behind approvals.
-- [ ] A **Needs you** inbox (web + mobile PWA + daily email digest), a **Results** gallery, and a **weekly report** that includes what didn't work.
-- [ ] Hosted runtime with bundled models, dollar-denominated allowance, hard caps, and event-driven wake-ups.
-- [ ] Instrumentation for activation (first approved output in under 10 minutes), approvals per week, week-4 retention, and outcome metrics.
-
-### Phase 2: Expand
-
-- [ ] Trust-ladder auto-mode, messaging channels (iMessage/WhatsApp), and vertical playbook packs through marketplaces.
-- [ ] "Honest launch" mode: idea → demand test (landing page + small ad spend with a hard cap) → go/no-go → offer → first customer.
-- [ ] Template community and anonymized outcome benchmarks as the brand and moat.
+### Phase 2: Category leadership
+- [ ] *State of One-Person Companies 2027* report built on Census NES, pilot outcomes and surveys.
+- [ ] Property agent kit with compliance guardrails; messaging channels; a kit marketplace for community creators.
+- [ ] International pilots: India (OPC registration partners) and Korea (1인 기업 centers).
 
 ---
 
 ## Data Sources
 
-**Government and primary data**
-- [US Census Bureau: nonemployer statistics story (May 2025)](https://www.census.gov/library/stories/2025/05/smallest-businesses.html)
-- [US Census Bureau: Business Formation Statistics](https://www.census.gov/econ/bfs/index.html)
-- [BLS establishment survival (via LendingTree)](https://www.lendingtree.com/business/small/failure-rate/)
-- [FTC: Click Profit action](https://www.ftc.gov/news-events/news/press-releases/2025/03/ftc-acts-stop-click-profit-online-business-opportunity-has-cost-consumers-least-14-million), [FTC: Operation AI Comply announcement](https://www.ftc.gov/news-events/news/press-releases/2024/09/ftc-announces-crackdown-deceptive-ai-claims-schemes)
-- [European Commission: Article 50 FAQ](https://digital-strategy.ec.europa.eu/en/faqs/transparency-obligations-under-article-50-ai-act), [Goodwin: Article 50 in force](https://www.goodwinlaw.com/en/insights/publications/2026/08/alerts-technology-dpc-eu-ai-act-transparency-obligations-now-in-force)
+**Primary data**
+- US Census Bureau: [Nonemployer Statistics 2023 flat files](https://www2.census.gov/programs-surveys/nonemployer-statistics/datasets/2023/historical-datasets/); [NAICS code list](https://www2.census.gov/programs-surveys/nonemployer-statistics/technical-documentation/code-lists/); [receipts-size table NS2300NONEMP](https://data.census.gov/table/NONEMP2023.NS2300NONEMP); [2022 nonemployer story](https://www.census.gov/library/stories/2025/05/smallest-businesses.html); [Business Formation Statistics](https://www.census.gov/econ/bfs/index.html)
+- Google Trends (pulled 2026-09-26 with pytrends): "one person company," "solopreneur," "one person business," "company of one," "AI agents," "AI employees," and industry "AI for X" terms
+- RDAP domain registries (Verisign, Identity Digital, rdap.org), 2026-09-26
+- [USPTO trademark search](https://tmsearch.uspto.gov/)
+- Competitor pricing pages (rendered 2026-09-26): [Sintra](https://sintra.ai/pricing), [Marblism](https://www.marblism.com/pricing), [Lindy](https://www.lindy.ai/pricing), [NanoCorp](https://www.nanocorp.so/pricing), [PaperclipCloud](https://paperclipcloud.com/), [Paperclip.inc](https://paperclip.inc/), [Polsia](https://polsia.com/), [paperclip.ing](https://paperclip.ing/)
+- [Anthropic API pricing](https://platform.claude.com/docs/en/about-claude/pricing); [Anthropic cost optimization guidance](https://platform.claude.com/docs/en/about-claude/models/optimizing-for-cost-and-intelligence.md)
 
-**Industry research**
-- [Carta: Solo Founders Report](https://carta.com/data/solo-founders-report/)
-- [Stripe Atlas 2025 year in review](https://stripe.com/blog/stripe-atlas-startups-in-2025-year-in-review), [Stripe 2025 annual letter](https://stripe.com/annual-updates/2025)
-- [MBO Partners: State of Independence 2025](https://www.mbopartners.com/state-of-independence)
-- [SBE Council: Solopreneur America (June 2026)](https://sbecouncil.org/2026/06/22/solopreneur-america/)
-- [Gartner: 40% of agentic AI projects canceled by 2027](https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027)
-- [Epoch AI: LLM inference price trends](https://epoch.ai/data-insights/llm-inference-price-trends)
-- [TheAgentCompany benchmark (NeurIPS 2025)](https://papers.nips.cc/paper_files/paper/2025/file/0d744742f6fac4d1134c019b7cef3c8a-Paper-Datasets_and_Benchmarks_Track.pdf)
-- [RevenueCat: State of Subscription Apps 2026](https://www.revenuecat.com/state-of-subscription-apps), [TechCrunch coverage](https://techcrunch.com/2026/03/10/ai-powered-apps-struggle-with-long-term-retention-new-report-shows)
-- [Grand View Research: AI agents market](https://www.grandviewresearch.com/industry-analysis/ai-agents-market-report), [MarketsandMarkets: agentic AI](https://www.marketsandmarkets.com/Market-Reports/agentic-ai-market-208190735.html), [BCC Research](https://www.bccresearch.com/pressroom/ait/ai-agents-market-to-grow-433-annually)
-- [Small Business Expo: AI trust gap](https://www.thesmallbusinessexpo.com/blog/the-trust-gap-small-businesses-are-using-ai-more-but-still-dont-fully-trust-it/), [Simply Business 2026 outlook](https://www.simplybusiness.com/resource/small-businesses-are-using-ai-but-theyre-not-letting-it-run-the-show-2026-outlook/)
+**Research and industry**
+- [Carta Solo Founders Report](https://carta.com/data/solo-founders-report/); [Stripe Atlas 2025 review](https://stripe.com/blog/stripe-atlas-startups-in-2025-year-in-review); [MBO Partners 2025](https://www.mbopartners.com/state-of-independence); [Upwork Future Workforce Index 2026](https://investors.upwork.com/news-releases/news-release-details/upworks-future-workforce-index-2026-how-ai-redefining-value-work)
+- [Korea 2025 one-person creative enterprise survey](https://www.korea.kr/briefing/pressReleaseView.do?newsId=156753709); [Venture Square](https://www.venturesquare.net/1074165/)
+- [Rest of World on China OPC](https://restofworld.org/2026/china-ai-one-person-companies-incentives/); [Honghub 2026 OPC Insight Report](https://www.globenewswire.com/news-release/2026/04/29/3283960/0/en/Honghub-Unveils-2026-OPC-Insight-Report-Revealing-China-s-One-Person-Company-Boom-and-a-72x-AI-Labor-Advantage.html); [SCIO](http://english.scio.gov.cn/chinavoices/2026-04/02/content_118416270.html)
+- [India MCA: One Person Company](https://www.mca.gov.in/content/mca/global/en/help-faq/faqs/company-services/incorporation/one-person-company.html)
+- [ICF Global Coaching Study 2025](https://coachingfederation.org/blog/coaching-industry-continues-global-growth-with-5-34-billion-usd-revenue-new-research-reveals/); [NAR technology report 2026](https://www.nar.realtor/newsroom/realtors-adopt-technology-to-save-time-and-improve-the-client-experience-nar-report-finds); [Goldman Sachs creator economy](https://www.goldmansachs.com/insights/articles/the-creator-economy-could-approach-half-a-trillion-dollars-by-2027)
+- [Gartner agentic AI cancellations](https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027); [METR time horizons](https://metr.org/time-horizons/); [Sierra τ-bench](https://sierra.ai/blog/benchmarking-ai-agents); [Epoch AI](https://epoch.ai/data-insights/llm-inference-price-trends); [RevenueCat via TechCrunch](https://techcrunch.com/2026/03/10/ai-powered-apps-struggle-with-long-term-retention-new-report-shows)
+- Small-business trust: [Small Business Expo](https://www.thesmallbusinessexpo.com/blog/the-trust-gap-small-businesses-are-using-ai-more-but-still-dont-fully-trust-it/); [KVIA/Stacker](https://kvia.com/stacker-small-business/2026/07/16/3-4-of-small-businesses-dont-trust-ai-for-basic-tasks/)
 
-**Competitors and market news**
-- Polsia: [AIN funding report](https://en.ain.ua/2026/05/25/ai-startup-polsia-with-no-employees-raised-30m-in-funding/), [Trustpilot](https://www.trustpilot.com/review/polsia.com), [cto.new pricing analysis](https://cto.new/guides/polsia-vs-cto-ai-business), [Fortune on the one-person unicorn](https://fortune.com/2026/03/26/the-one-person-unicorn-myth-miracle-future-of-startups-polsia/)
-- NanoCorp: [Show HN](https://news.ycombinator.com/item?id=48062033), [preuve.ai review](https://preuve.ai/blog/nanocorp-review), [nanocorp.so](https://www.nanocorp.so/)
-- Sintra: [Tech.eu seed round](https://tech.eu/2025/06/10/lithuanian-ai-startup-sintra-secures-17m-seed-empowering-smbs-with-ai-helpers/), [pricing](https://sintra.ai/pricing)
-- Marblism: [pricing analysis](https://mrktcorrect.com/blog/marblism-pricing)
-- Motion: [Series C announcement](https://www.usemotion.com/blog/motion-raises-60m-to-build-the-agentic-work-suite-for-businesses), [pricing criticism](https://temporal.day/blog/motion-pricing-2026-why-users-leaving)
-- Lindy: [pricing](https://www.usecarly.com/blog/lindy-ai-pricing/), [Latka](https://getlatka.com/companies/lindyai)
-- Lovable: [The Next Web](https://thenextweb.com/news/lovable-build-economy-500m-arr-vibe-coding)
-- Paperclip: [paperclip.ing](https://paperclip.ing/), [Contabo overview](https://contabo.com/blog/what-is-paperclip-ai/), [eesel review](https://www.eesel.ai/blog/paperclip-ai-review), [Hostinger hosting guide](https://www.hostinger.com/tutorials/best-paperclip-ai-hosting/), [PaperclipCloud](https://paperclipcloud.com/)
-- OpenAI: [ChatGPT for small business program](https://openai.com/index/introducing-chatgpt-small-business-program/), [Inc.](https://www.inc.com/chloe-aiello/openai-just-unveiled-a-massive-push-to-turn-small-business-owners-into-ai-power-users/91377329)
-- Anthropic: [Claude Cowork on TechCrunch](https://techcrunch.com/2026/07/07/the-coding-agent-wars-are-spilling-into-the-rest-of-the-office-claude-cowork/)
-- Meta/Manus: [CNBC](https://www.cnbc.com/2026/01/21/metas-2b-manus-deal-pushes-away-some-customers-sad-it-happened.html)
-- OpenClaw security: [Kaspersky](https://www.kaspersky.com/blog/openclaw-vulnerabilities-exposed/55263/), [CrowdStrike](https://www.crowdstrike.com/en-us/blog/what-security-teams-need-to-know-about-openclaw-ai-super-agent/)
-- Incumbents: [Shopify Sidekick](https://www.shopify.com/sidekick), [Intuit AI agents](https://investors.intuit.com/news-events/press-releases/detail/1258/intuit-introduces-ground-breaking-virtual-team-of-ai-agents-to-fuel-growth-for-businesses)
-- China OPC: [Rest of World](https://restofworld.org/2026/china-ai-one-person-companies-incentives/), [China Daily](https://www.chinadaily.com.cn/a/202605/06/WS69fa9a65a310d6866eb47064.html), [Asia Financial](https://www.asiafinancial.com/chinas-young-tapping-ai-subsidies-to-launch-one-person-firms)
-- Incidents: [AI Incident Database #1152 (Replit)](https://incidentdatabase.ai/cite/1152/)
+**Competitors and news**
+- Polsia: [Trustpilot](https://www.trustpilot.com/review/polsia.com), [AIN](https://en.ain.ua/2026/05/25/ai-startup-polsia-with-no-employees-raised-30m-in-funding/), [Fortune](https://fortune.com/2026/03/26/the-one-person-unicorn-myth-miracle-future-of-startups-polsia/)
+- NanoCorp: [preuve.ai analysis of NanoCorp updates](https://preuve.ai/blog/nanocorp-review), [Show HN](https://news.ycombinator.com/item?id=48062033)
+- [Sintra seed round](https://tech.eu/2025/06/10/lithuanian-ai-startup-sintra-secures-17m-seed-empowering-smbs-with-ai-helpers/); [Motion Series C](https://www.usemotion.com/blog/motion-raises-60m-to-build-the-agentic-work-suite-for-businesses); [Taskade one-person companies](https://www.taskade.com/blog/one-person-companies)
+- [Lofty and real estate AI](https://ascendix.com/blog/ai-real-estate-agents/); [coach AI clone pricing](https://personify.fyi/blog/ai-clone-cost/)
+- [OpenAI small-business program](https://openai.com/index/introducing-chatgpt-small-business-program/); [Claude Cowork](https://techcrunch.com/2026/07/07/the-coding-agent-wars-are-spilling-into-the-rest-of-the-office-claude-cowork/)
+- FTC: [Click Profit](https://www.ftc.gov/news-events/news/press-releases/2025/03/ftc-acts-stop-click-profit-online-business-opportunity-has-cost-consumers-least-14-million), [Operation AI Comply one year in](https://www.beneschlaw.com/insight/one-year-in-ftcs-operation-ai-comply-continues-under-new-administration-signaling-enduring-enforcement-focus/)
+- [OPC Foundation terms](https://opcfoundation.org/terms-and-conditions/)
 
 ## Data Quality Notes
 
-- **Access limits.** Most figures came from search-engine summaries. The research environment's network policy blocked direct page fetches for several primary sites, including census.gov, fortune.com and paperclip.ing. Verify key numbers against the original pages before using them in a pitch deck.
-- **Self-reported numbers.** Competitor revenue (Polsia, NanoCorp, Sintra, Motion) comes from company statements or press, not audited data.
-- **Market-size spread.** Analyst estimates for the AI-agents market in 2026 differ by up to about 2x. Use them for direction only; they mostly reflect enterprise spending.
-- **Weak sources.** Several solopreneur statistics circulate on vendor or SEO blogs, such as "74% of solopreneurs use AI." They are excluded from the core argument, which relies on Census, Carta, Stripe, MBO, SBE Council and Gartner.
-- **Benchmark age.** TheAgentCompany results were measured on 2025-era models. Newer models likely score higher, but the direction (realistic multi-step business tasks are still unreliable) holds.
-- **Estimates.** TAM/SAM/SOM and unit economics in this report are estimates built from the stated assumptions.
+- **Census NES** counts *establishments* of businesses with no paid employees that file taxes. Side income shows up as small establishments, which is why 60.6% earn under $25K. The "≥$50K" filter is the best available proxy for "can pay."
+- **Google Trends** values are relative indexes, not search volumes, and they carry sampling noise. Q3 2026 is a partial quarter.
+- **The USPTO search** showed no results for the exact phrase. That is not legal advice; do a proper clearance search with counsel.
+- **Domain checks**: `.ai` lookups for several exact names were rate-limited (HTTP 429), so their status is unknown.
+- **Carta** figures come via secondary reporting because carta.com blocks automated access. **India OPC counts** vary by source (≈34K in Dec 2020; secondary sources cite ~86K active in 2025–26).
+- **Competitor revenue** is self-reported (Polsia's figures range from $4.5M to ~$10M). **The unit-economics model** uses assumed workloads priced at list rates. Measure real usage in the concierge pilot.
