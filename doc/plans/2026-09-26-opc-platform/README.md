@@ -28,7 +28,13 @@ done.
    SEO/AI-search visibility, community, creators/affiliates, PR, launch
    week, gated paid acquisition, lifecycle/onboarding, measurement,
    budget, compliance, and a 90-day calendar.
+5. [**product-feature-strategy.md**](./product-feature-strategy.md) — CPO
+   feature strategy: voice of customer from 731 competitor reviews, where
+   owners lose time and money, the late-2026 competitor baseline, seven
+   differentiating bets with 10–100x targets, a RICE-ranked backlog, roadmap,
+   Paperclip reuse map, anti-features, and the validation plan.
 
 Read `market-research.md` first — the other three are referenced from it
 and expand on specific sections (kits from §5, the harness from §6,
-go-to-market from the executive summary point 7).
+go-to-market from the executive summary point 7). The product feature
+strategy builds on all four.
