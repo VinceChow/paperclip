@@ -1,7 +1,7 @@
 # Industry Kits for One-Person Companies: Demand Research and Kit Design
 
 **Date:** 2026-09-26
-**Part of:** [Market Research Report (v2)](./market-research.md) · [Reliability and cost harness](./reliability-cost-harness.md) · [Marketing plan](./marketing-plan.md) · [Product feature strategy](./product-feature-strategy.md)
+**Part of:** [Market Research Report (v2)](./market-research.md) · [Reliability and cost harness](./reliability-cost-harness.md) · [Marketing plan](./marketing-plan.md) · [Product feature strategy](./product-feature-strategy.md) · [PRD](./prd.md)
 **Question:** Does it help to ship ready-made *industry kits* (templates of agents, workflows and orchestration) for the major one-person-company industries: consultants, coaches, designers, property agents, creators, and others?
 
 ---

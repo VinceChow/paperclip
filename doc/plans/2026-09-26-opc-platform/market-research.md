@@ -9,6 +9,7 @@
 - [Reliability and cost: the outcome loop harness](./reliability-cost-harness.md)
 - [Go-to-market and marketing plan: landing page, social media, launch](./marketing-plan.md)
 - [Product feature strategy (CPO): what to build, 10–100x targets, backlog and roadmap](./product-feature-strategy.md)
+- [Product requirements document (PRD): from-scratch build spec](./prd.md)
 
 **Method:** Primary data where it exists: the US Census 2023 Nonemployer Statistics file, Census business-formation releases, Google Trends, domain registries (RDAP), the USPTO trademark search, and competitor pricing pages rendered in a headless browser. Secondary data (industry reports, press, reviews) is marked as such. See [What changed since v1](#what-changed-since-v1) and [Data quality notes](#data-quality-notes).
 

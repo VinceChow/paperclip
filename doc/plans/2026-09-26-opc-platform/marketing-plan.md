@@ -1,7 +1,7 @@
 # Go-to-Market and Marketing Plan: The Platform for One-Person Companies
 
 **Date:** 2026-09-26
-**Part of:** [Market Research Report (v2)](./market-research.md) · [Industry kits](./industry-kits.md) · [Reliability and cost harness](./reliability-cost-harness.md) · [Product feature strategy](./product-feature-strategy.md) · [X build-in-public guide](./x-build-in-public-guide.md)
+**Part of:** [Market Research Report (v2)](./market-research.md) · [Industry kits](./industry-kits.md) · [Reliability and cost harness](./reliability-cost-harness.md) · [Product feature strategy](./product-feature-strategy.md) · [X build-in-public guide](./x-build-in-public-guide.md) · [PRD](./prd.md)
 **Scope:** Positioning, brand, landing page, social media, content, SEO and AI-search visibility, community, creators and affiliates, PR, launch, paid acquisition, onboarding and lifecycle, measurement, budget, compliance, a 90-day calendar, expansion markets, and launch copy.
 
 **Working assumptions:**

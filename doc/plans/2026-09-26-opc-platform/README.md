@@ -37,8 +37,16 @@ done.
    guide to building [Brand] in public on X: account setup, finding your
    audience, content pillars and series, the reply strategy, daily routine,
    a 120-day plan through launch, 30 ready-to-edit posts, and safety rules.
+7. [**prd.md**](./prd.md) — Product requirements document for building the
+   platform **from scratch** (not on Paperclip): goals and metrics, personas,
+   release plan (public beta W0 → GA), 143 functional requirements across 16
+   modules, 17 AI-system and 18 non-functional requirements, architecture and
+   stack, data model, integrations and lead-time risks, pricing and
+   allowances, analytics, compliance, delivery plan with release gates, and
+   open questions.
 
-Read `market-research.md` first — the other three are referenced from it
-and expand on specific sections (kits from §5, the harness from §6,
-go-to-market from the executive summary point 7). The product feature
-strategy builds on all four.
+Read `market-research.md` first. Documents 2–4 expand on specific sections
+of it (kits from §5, the harness from §6, go-to-market from the executive
+summary point 7). The product feature strategy builds on all four, the X
+guide expands the marketing plan, and the PRD turns everything into a build
+spec.

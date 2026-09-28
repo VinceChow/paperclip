@@ -2,7 +2,7 @@
 
 **Date:** 2026-09-27
 **Author role:** Chief Product Officer
-**Part of:** [Market research](./market-research.md) · [Industry kits](./industry-kits.md) · [Reliability and cost harness](./reliability-cost-harness.md) · [Marketing plan](./marketing-plan.md)
+**Part of:** [Market research](./market-research.md) · [Industry kits](./industry-kits.md) · [Reliability and cost harness](./reliability-cost-harness.md) · [Marketing plan](./marketing-plan.md) · [PRD (from-scratch build)](./prd.md)
 **Question:** Which features should we build so that non-technical one-person-company (OPC) owners get results 10–100x better than today, and clearly better than the competitors?
 
 **Method:**
