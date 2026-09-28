@@ -33,6 +33,10 @@ done.
    owners lose time and money, the late-2026 competitor baseline, seven
    differentiating bets with 10–100x targets, a RICE-ranked backlog, roadmap,
    Paperclip reuse map, anti-features, and the validation plan.
+6. [**x-build-in-public-guide.md**](./x-build-in-public-guide.md) — Beginner's
+   guide to building [Brand] in public on X: account setup, finding your
+   audience, content pillars and series, the reply strategy, daily routine,
+   a 120-day plan through launch, 30 ready-to-edit posts, and safety rules.
 
 Read `market-research.md` first — the other three are referenced from it
 and expand on specific sections (kits from §5, the harness from §6,
