@@ -71,7 +71,7 @@ Secondary data (press, aggregators) is labeled as such. See [Data quality notes]
    - low-trust containment;
    - approvals, budgets, completion contracts and evals.
    
-   The factory P0 is about **60–75 person-weeks** on Paperclip, against about 145 from scratch.
+   The beta P0 is about **80 person-weeks** on Paperclip (69 of engineering, plus design, security and QA), against about 145 from scratch.
 7. **Economics work with outcome pricing.**
    - A Medium change (1–3 hours of human work) costs about **$5** in models plus sandbox.
    - Priced at **$12 per merged change**, it earns about 50% gross margin even after paying for failed attempts.
@@ -440,7 +440,7 @@ Ranked by size × fit × defensibility:
 | Deploy targets | Vercel connect, Railway services | Preview environments, flags, rollback adapters |
 | Evals | Runner evals and product end-to-end evals ([doc](../../evals.md)) | Factory benchmark; per-line golden sets |
 
-**Effort:** the factory P0 is about **60–75 person-weeks** on Paperclip, against about 145 from scratch. Details are in the [PRD §18](./prd.md#18-delivery-plan).
+**Effort:** the beta P0 is about **80 person-weeks** on Paperclip (69 of engineering, plus about 11 of design, security and QA), against about 145 from scratch. The pivot proposal's earlier 60–75 range covered engineering only. Details are in the [PRD §18](./prd.md#18-delivery-plan).
 
 **Main technical risks:**
 - upstream churn (mitigated by a thin fork and contributing upstream);
