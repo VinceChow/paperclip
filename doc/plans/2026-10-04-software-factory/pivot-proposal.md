@@ -3,8 +3,8 @@
 | | |
 |---|---|
 | **Date** | 2026-10-04 |
-| **Status** | **For your review.** None of the seven existing documents has been changed yet. They will be updated after you decide on §9. |
-| **Scope** | Every document in [`2026-09-26-opc-platform/`](./2026-09-26-opc-platform/README.md): market research, industry kits, reliability and cost harness, marketing plan, product feature strategy, X guide and PRD |
+| **Status** | **Approved 2026-10-04.** All nine recommendations in §9 were accepted as written. The rewritten documents are in this folder (see the [README](./README.md)); the OPC set is kept, marked as superseded. |
+| **Scope** | Every document in [`2026-09-26-opc-platform/`](../2026-09-26-opc-platform/README.md): market research, industry kits, reliability and cost harness, marketing plan, product feature strategy, X guide and PRD |
 | **Method** | New desk research (pulled 2026-10-04) • 656 one- and two-star Trustpilot reviews of seven AI-coding products, coded by theme • 246 four- and five-star reviews • METR time-horizon raw data • Google Trends • Census SUSB 2021 and NES 2023 firm counts • Claude API price list • a capability check of this repository |
 
 ---
@@ -439,15 +439,15 @@ The PRD assumed a from-scratch build. For a software factory, Paperclip's existi
 
 | Factory need | Already in this repository |
 |---|---|
-| Work orders, breakdown, dependencies | Issues, sub-issues and blocker relationships ([`doc/execution-semantics.md`](../execution-semantics.md)) |
+| Work orders, breakdown, dependencies | Issues, sub-issues and blocker relationships ([`doc/execution-semantics.md`](../../execution-semantics.md)) |
 | Many coding agents, model-neutral | 12 adapters, including Claude Code, Codex, Cursor, Gemini and OpenCode (`packages/adapters/`) |
 | Isolated execution | Execution and project workspaces, runtime leases, Daytona-backed runs in evals |
-| Safe GitHub access | Managed, token-free `git`/`gh` launchers bound to the run's accepted identity ([`doc/execution-github-identity.md`](../execution-github-identity.md)) |
-| Hostile input (untrusted PRs, tickets) | `low_trust_review` preset ([`doc/LOW-TRUST-PRESETS.md`](../LOW-TRUST-PRESETS.md)); containerized untrusted-PR review |
+| Safe GitHub access | Managed, token-free `git`/`gh` launchers bound to the run's accepted identity ([`doc/execution-github-identity.md`](../../execution-github-identity.md)) |
+| Hostile input (untrusted PRs, tickets) | `low_trust_review` preset ([`doc/LOW-TRUST-PRESETS.md`](../../LOW-TRUST-PRESETS.md)); containerized untrusted-PR review |
 | Approvals, budgets, audit | Approvals, budget policies and incidents, activity log |
 | Definition of done | `completion_contracts`, `work_assessments` |
 | Recurring lines (maintenance, upgrades) | Routines; task watchdog |
-| Evals | Runner evals and product end-to-end evals ([`doc/evals.md`](../evals.md)) |
+| Evals | Runner evals and product end-to-end evals ([`doc/evals.md`](../../evals.md)) |
 
 **Rough effort for the factory P0** (to be re-estimated in the PRD v2):
 - **From scratch:** about 145 person-weeks.
