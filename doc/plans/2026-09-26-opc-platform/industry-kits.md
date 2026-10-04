@@ -1,5 +1,8 @@
 # Industry Kits for One-Person Companies: Demand Research and Kit Design
 
+> **Superseded (2026-10-04).** The product pivoted to an AI software factory. This document is kept for history. The current version is [../2026-10-04-software-factory/factory-lines.md](../2026-10-04-software-factory/factory-lines.md); see the [pivot proposal](../2026-10-04-software-factory/pivot-proposal.md) for why.
+
+
 **Date:** 2026-09-26
 **Part of:** [Market Research Report (v2)](./market-research.md) · [Reliability and cost harness](./reliability-cost-harness.md) · [Marketing plan](./marketing-plan.md) · [Product feature strategy](./product-feature-strategy.md) · [PRD](./prd.md)
 **Question:** Does it help to ship ready-made *industry kits* (templates of agents, workflows and orchestration) for the major one-person-company industries: consultants, coaches, designers, property agents, creators, and others?

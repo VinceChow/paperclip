@@ -2,10 +2,10 @@
 
 Date: 2026-09-26
 
-> **Under review (2026-10-04):** a proposal to pivot this work to an AI
-> software factory, with a change list for every document below:
-> [2026-10-04-software-factory-pivot-proposal.md](../2026-10-04-software-factory-pivot-proposal.md).
-> These documents stay unchanged until that proposal is decided.
+> **Superseded (2026-10-04).** The pivot to an AI software factory was approved.
+> The current plan set is in [`../2026-10-04-software-factory/`](../2026-10-04-software-factory/README.md),
+> starting with the [pivot proposal](../2026-10-04-software-factory/pivot-proposal.md).
+> The documents below are kept unchanged for history, apart from this banner and one at the top of each file.
 
 Research and planning set for a Paperclip-based product marketed as *the
 platform for one-person companies*: solo business owners (consultants,

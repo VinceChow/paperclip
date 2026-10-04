@@ -1,5 +1,8 @@
 # Go-to-Market and Marketing Plan: The Platform for One-Person Companies
 
+> **Superseded (2026-10-04).** The product pivoted to an AI software factory. This document is kept for history. The current version is [../2026-10-04-software-factory/marketing-plan.md](../2026-10-04-software-factory/marketing-plan.md); see the [pivot proposal](../2026-10-04-software-factory/pivot-proposal.md) for why.
+
+
 **Date:** 2026-09-26
 **Part of:** [Market Research Report (v2)](./market-research.md) · [Industry kits](./industry-kits.md) · [Reliability and cost harness](./reliability-cost-harness.md) · [Product feature strategy](./product-feature-strategy.md) · [X build-in-public guide](./x-build-in-public-guide.md) · [PRD](./prd.md)
 **Scope:** Positioning, brand, landing page, social media, content, SEO and AI-search visibility, community, creators and affiliates, PR, launch, paid acquisition, onboarding and lifecycle, measurement, budget, compliance, a 90-day calendar, expansion markets, and launch copy.

@@ -1,5 +1,8 @@
 # Product Strategy: What to Build for Non-Technical One-Person Companies
 
+> **Superseded (2026-10-04).** The product pivoted to an AI software factory. This document is kept for history. The current version is [../2026-10-04-software-factory/product-feature-strategy.md](../2026-10-04-software-factory/product-feature-strategy.md); see the [pivot proposal](../2026-10-04-software-factory/pivot-proposal.md) for why.
+
+
 **Date:** 2026-09-27
 **Author role:** Chief Product Officer
 **Part of:** [Market research](./market-research.md) · [Industry kits](./industry-kits.md) · [Reliability and cost harness](./reliability-cost-harness.md) · [Marketing plan](./marketing-plan.md) · [PRD (from-scratch build)](./prd.md)

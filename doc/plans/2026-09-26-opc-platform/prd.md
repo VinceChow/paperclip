@@ -1,5 +1,8 @@
 # [Brand] Product Requirements Document (PRD)
 
+> **Superseded (2026-10-04).** The product pivoted to an AI software factory. This document is kept for history. The current version is [../2026-10-04-software-factory/prd.md](../2026-10-04-software-factory/prd.md); see the [pivot proposal](../2026-10-04-software-factory/pivot-proposal.md) for why.
+
+
 | | |
 |---|---|
 | **Product** | [Brand]: the platform for one-person companies |

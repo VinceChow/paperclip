@@ -1,5 +1,8 @@
 # Building in Public on X: A Beginner's Guide for the [Brand] Founder
 
+> **Superseded (2026-10-04).** The product pivoted to an AI software factory. This document is kept for history. The current version is [../2026-10-04-software-factory/x-build-in-public-guide.md](../2026-10-04-software-factory/x-build-in-public-guide.md); see the [pivot proposal](../2026-10-04-software-factory/pivot-proposal.md) for why.
+
+
 **Date:** 2026-09-28
 **Part of:** [Marketing plan](./marketing-plan.md) (this expands §6 "Company of One, Run in Public") · [Product feature strategy](./product-feature-strategy.md) · [Market research](./market-research.md)
 **Who this is for:** a founder who is new to X and wants to build an audience from zero while building the one-person-company platform in public.

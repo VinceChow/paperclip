@@ -1,5 +1,8 @@
 # Market Research Report (v2): The Platform for One-Person Companies
 
+> **Superseded (2026-10-04).** The product pivoted to an AI software factory. This document is kept for history. The current version is [../2026-10-04-software-factory/market-research.md](../2026-10-04-software-factory/market-research.md); see the [pivot proposal](../2026-10-04-software-factory/pivot-proposal.md) for why.
+
+
 **Topic:** Feasibility of a Paperclip-style AI agent orchestration product built for one-person companies ("OPC")
 **Target market:** Solo business owners and aspiring founders, including people with little AI knowledge
 **End goal under test:** A popular, dead-simple product with great UX, marketed as *the platform for One Person Companies*
