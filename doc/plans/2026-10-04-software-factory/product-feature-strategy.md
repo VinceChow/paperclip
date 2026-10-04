@@ -401,7 +401,7 @@ All scores are estimates to revisit with Phase 0 data.
 
 | Window | Build | Lines | Exit criteria |
 |---|---|---|---|
-| **Phase 0** (October to mid-November 2026) | Concierge factory on the Paperclip fork; S3, S4, S5 prototypes | L2, L3 (hand-operated where needed) | Go/no-go gates in [market research §8](./market-research.md#phase-0-validate-october-to-mid-november-2026-4-6-weeks) |
+| **Phase 0** (October to mid-November 2026) | Concierge factory on the Paperclip fork; S3, S4, S5 prototypes | L2, L3 (hand-operated where needed) | Go/no-go gates in [market research §8](./market-research.md#phase-0-validate-october-to-mid-november-2026-46-weeks) |
 | **Build to beta** (mid-November 2026 to January 2027) | S1–S19 | L2, L3 GA-in-beta; L1 preview | First-pass merge rate ≥ 60%; false green = 0; Medium cost ≤ $6 p50; billing end-to-end tests pass |
 | **Public beta** (W0 = week of 25 Jan 2027) | Launch; founding pricing | Same | ≥ 50% of trials merge a change within 30 minutes; week-4 retention ≥ 35% |
 | **GA** (late April 2027) | S20–S29 | + L1 GA, L4, L5 | First-pass merge rate ≥ 75%; change-failure rate ≤ 10%; week-4 retention ≥ 45%; SOC 2 Type I |
