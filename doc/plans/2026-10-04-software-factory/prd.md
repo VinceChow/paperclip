@@ -8,7 +8,7 @@
 | **Owner** | Founder / CPO |
 | **Status** | Draft. Needs review by Engineering lead, Design lead and Security/compliance |
 | **Build assumption** | **Built on a fork of Paperclip** (MIT), decision D4 in the [pivot proposal](./pivot-proposal.md#9-decisions-for-you). Paperclip supplies the control plane: issues, agents and adapters, sandboxes, workspaces, GitHub identity, approvals, budgets, contracts, routines and evals. We build the factory layer: lines, verification, the evidence inbox, the merge service, previews, the outcome-priced ledger and the factory UI |
-| **Related documents** | [Market research v3](./market-research.md) · [Factory lines](./factory-lines.md) · [Factory harness](./reliability-cost-harness.md) · [Product strategy v2](./product-feature-strategy.md) · [Marketing plan v2](./marketing-plan.md) · [X guide v2](./x-build-in-public-guide.md) |
+| **Related documents** | [Market research v3](./market-research.md) · [Competitor analysis](./competitor-analysis.md) · [Factory lines](./factory-lines.md) · [Factory harness](./reliability-cost-harness.md) · [Product strategy v2](./product-feature-strategy.md) · [Marketing plan v2](./marketing-plan.md) · [X guide v2](./x-build-in-public-guide.md) |
 
 **Placeholders:** `[Brand]` is the product name, pending naming and trademark clearance ([market research §2.2](./market-research.md#22-naming-trademarks-and-domains)).
 
@@ -870,7 +870,7 @@ For comparison, the from-scratch estimate was about 145 person-weeks ([pivot pro
 
 | Risk | Impact | Likelihood | Mitigation |
 |---|---|---|---|
-| Labs or platforms ship an equivalent "factory" for small teams | High | High | Model neutrality; outcome pricing; evidence; human support; speed of iteration; benchmark leadership |
+| **Factory (factory.com) packages its Software Factory layer for small teams,** or labs and platforms ship an equivalent | High | High | Outcome pricing (charge on merge, false-green refunds); safe by default; hidden holdouts; done-for-you lines; human support; benchmark on cost per verified change. Monthly competitive watch ([competitor analysis](./competitor-analysis.md)) |
 | Reliability below target on messy repositories | High | Medium | X-ray readiness checks; "make tests runnable" orders; L2 and L3 first; order sizing |
 | Outcome pricing margin squeezed by token costs | High | Medium | Routing, caching, sizing; bring-your-own-key mode; price review before GA |
 | Sandbox escape or credential leak | Very high | Low | No secrets in sandboxes; egress allowlists; penetration test; red team; bug bounty after GA |

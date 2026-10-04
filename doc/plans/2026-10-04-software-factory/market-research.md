@@ -13,6 +13,7 @@
 - [Product requirements document (PRD v2)](./prd.md)
 - [Go-to-market and marketing plan](./marketing-plan.md)
 - [X build-in-public guide](./x-build-in-public-guide.md)
+- [Competitor analysis: Factory (factory.com) and the software-factory field](./competitor-analysis.md)
 
 **Method.** I used primary data wherever it exists:
 - **Census:** Statistics of U.S. Businesses (SUSB) 2021 for firm counts by size, and Nonemployer Statistics 2023.
@@ -37,7 +38,7 @@ Secondary data (press, aggregators) is labeled as such. See [Data quality notes]
    - Revenue leaders:
      - Cursor passed **$4B** in annualized revenue and was bought by SpaceX for **$60B**.
      - Claude Code passed a **$2.5B** run rate in February 2026.
-     - Cognition is near **$900M** at a **$48B** valuation.
+     - Cognition passed **$1B** in annualized revenue (25 Sep 2026) at a **$48B** valuation.
      - Lovable is valued at **$13.3B** and Replit at **$9B**.
    - Gartner launched a standalone "Enterprise AI Coding Agents" Magic Quadrant in May 2026.
 2. **The bottleneck has moved from writing code to verifying, securing and paying for it.**
@@ -56,7 +57,8 @@ Secondary data (press, aggregators) is labeled as such. See [Data quality notes]
      - 113.9K computer-systems-design firms with under 20 employees;
      - 10.2K small software publishers.
    - Solo founders formed **63%** of Stripe Atlas C corporations in Q2 2026.
-   - Enterprise factories (8090 at $200 per user plus tokens; Factory) sell top-down. App builders (Lovable, Replit) sell prototypes to non-engineers.
+   - The closest competitor, **Factory** (factory.com), now headlines "Build your software factory" and has a self-serve Teams plan ($60 + $40 per seat). But it bills consumption (credits plus rate limits), keeps sandboxing opt-in, and its whole-lifecycle layer is still enterprise Private Preview ([competitor analysis](./competitor-analysis.md)).
+   - App builders (Lovable, Replit) sell prototypes to non-engineers.
 5. **What customers hate is the economics, not the AI.**
    - **66%** of negative reviews of AI-coding products complain about money: 49% about credits and usage, 42% about billing and refunds.
    - **39%** complain about support.
@@ -83,10 +85,10 @@ Secondary data (press, aggregators) is labeled as such. See [Data quality notes]
 |---|---|---|
 | Market demand | **Very strong** | 90% weekly agent use; multi-billion-dollar run rates; Gartner category |
 | Willingness to pay | **Proven at $20–200 per seat; enterprises spend $150–2,000 per engineer per month on tokens** | Claude, Cursor, Copilot, Devin, Factory price ladders (§4.2); Claude Code enterprise average; Uber |
-| "AI software factory" as positioning | **Good as a category, unavailable as a brand** | Search interest up about 4x since Q1 2025 but small; "Factory" is Factory.ai's brand; "Software Factory" is 8090's product name |
+| "AI software factory" as positioning | **Good as a category, unavailable as a brand, and getting crowded** | Search interest up about 4x since Q1 2025 but small. "Factory" is Factory's brand, and factory.com headlines "Build your software factory". Tessl uses the same phrase. 8090 has a USPTO application for "8090 SOFTWARE FACTORY" |
 | Technical feasibility | **High** | Paperclip already covers most of the control plane (§6.1) |
 | Reliability at acceptable cost | **Medium → High with the factory harness** | Order sizing to METR's reliable horizon; executable definitions of done; holdout scenarios; about $5 per Medium change |
-| Competitive intensity | **Extreme** | Labs, platforms and seven funded start-ups; consolidation (Cursor–Graphite, Cognition–Windsurf, SpaceX–Cursor) |
+| Competitive intensity | **Extreme** | Labs, platforms and funded start-ups. Factory now uses "software factory" as its headline, and 300+ open-source factory projects exist. Consolidation (Cursor–Graphite, Cognition–Windsurf, SpaceX–Cursor). See the [competitor analysis](./competitor-analysis.md) |
 | Regulatory and reputational risk | **Medium** | Security incidents (PocketOS, data-leaking vibe-coded apps); EU Cyber Resilience Act; copyright of AI-only code; "replace engineers" backlash |
 
 ---
@@ -138,8 +140,8 @@ Dan Shapiro's five levels have become the industry's shorthand ([Simon Willison]
 | Anthropic: Claude Code | Agentic coding (CLI, IDE, web); Code Review; Managed Agents | Run rate above $2.5B (12 Feb 2026); used by 39% of developers | [VentureBeat](https://venturebeat.com/technology/anthropic-says-it-hit-a-30-billion-revenue-run-rate-after-crazy-80x-growth), [JetBrains](https://blog.jetbrains.com/research/2026/08/ai-coding-agent-adoption-2026/) |
 | OpenAI: Codex | Coding agent in ChatGPT and CLI | Gartner Leader; about 5M weekly users (Jun 2026, reported) | [OpenAI](https://openai.com/index/gartner-2026-agentic-coding-leader/), [Constellation (secondary)](https://www.constellationr.com/insights/news/openai-touts-broadening-codex-usage-5-million-weekly-active-users) |
 | GitHub Copilot and Agent HQ | Assistant plus a multi-vendor agent "mission control" | 4.7M paid subscribers, up 75% year over year (Jan 2026) | [Microsoft](https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q2), [GitHub](https://github.blog/news-insights/company-news/welcome-home-agents/) |
-| Cognition (Devin + Windsurf) | Autonomous engineer plus IDE | Run rate about $900M; $2B raised at $48B (Sep 2026) | [Bloomberg](https://www.bloomberg.com/news/articles/2026-09-08/ai-startup-cognition-raises-2-billion-at-a-48-billion-value) |
-| Factory | "Droids" across the lifecycle: review, security, QA, docs, incident response | $200M at $5B (Sep 2026); Nvidia, Adobe, Palo Alto Networks | [DevOps.com](https://devops.com/factory-raises-200m-as-it-builds-agents-across-the-software-lifecycle/) |
+| Cognition (Devin + Windsurf) | Autonomous engineer plus IDE; enterprise "AI Productivity Guarantee" | **$1B+** annualized revenue (25 Sep 2026); $2B raised at $48B (Sep 2026) | [Bloomberg](https://www.bloomberg.com/news/articles/2026-09-08/ai-startup-cognition-raises-2-billion-at-a-48-billion-value), [Cognition](https://cognition.com/blog/1b-run-rate) |
+| Factory (factory.com) | "Build your software factory": Droids across the lifecycle (readiness, wiki, automations, review, security, QA; release and incident response in preview) | $200M at $5B (Sep 2026); Nvidia, Adobe, Palo Alto Networks | [DevOps.com](https://devops.com/factory-raises-200m-as-it-builds-agents-across-the-software-lifecycle/), [competitor analysis §2](./competitor-analysis.md#2-factory-factorycom-deep-teardown) |
 | 8090 | "Software Factory": Requirements, Blueprints, Work Orders, Tests, Feedback | $135M Series A; EY deployment | [Ry Walker](https://rywalker.com/research/8090-software-factory), [EY](https://www.ey.com/en_us/newsroom/2026/03/ernst-young-llp-and-8090-launch-ey-ai-pdlc) |
 | Lovable | Prompt-to-app for non-engineers, moving into "running businesses" | $400M at $13.3B (Aug 2026); 60M+ projects | [Lovable](https://lovable.dev/blog/series-c) |
 | Replit | Agent plus hosting | About $525M annualized revenue (Apr 2026); $9B | [Sacra](https://sacra.com/c/replit/) |
@@ -150,7 +152,7 @@ Dan Shapiro's five levels have become the industry's shorthand ([Simon Willison]
 **Reading:**
 - The coding-agent layer is owned by labs and platforms. They ship at model cost and own distribution.
 - Start-ups that win either go all-in on enterprise (Cognition, Factory, 8090) or on non-engineers (Lovable, Replit).
-- Nobody has made the *governed factory for small teams* their main product.
+- Factory and Cognition both now have self-serve team plans, but they sell agents billed by consumption. Neither sells a done-for-you factory priced on merged outcomes for 1–20-person teams. That is our opening ([competitor analysis §1](./competitor-analysis.md#1-summary)).
 
 ### 1.3 Adoption
 
@@ -230,7 +232,7 @@ The **horizon** is the length of task, in expert-human time, that an agent compl
 | Item | Finding | Implication |
 |---|---|---|
 | "Factory" | Factory.ai's brand ($5B company) | Never use "Factory" alone, or as the lead word of our brand |
-| "Software Factory" | 8090's product name; also a generic US defense term | Use it as a descriptive category phrase only ("an AI software factory") |
+| "Software Factory" | 8090's product name, with a USPTO application for "8090 SOFTWARE FACTORY" (filed 16 Jul 2025; [uspto.report](https://uspto.report/TM/99287889)). Factory headlines "Build your software factory". Also a generic US defense term | Descriptive use only ("an AI software factory"); get counsel before any use in a product name or headline. Consider leading with "verified software factory" or "verified changes" ([competitor analysis C5](./competitor-analysis.md#7-what-this-changes-in-our-plan-recommendations)) |
 | "Dark factory" | Industry term for Level 5 (Shapiro) | Good in content; poor as a brand (it sounds ominous) |
 | Short compound domains | RDAP, 2026-10-04: all 12 candidate `.com` names were registered (for example specline, shipline, linewright, mergewright, provenline, factoryofone, verifyline). `.dev` versions were free for 8 of 12 (for example linewright.dev, mergewright.dev, provenline.dev, factoryofone.dev) | Plan for a coined name, or a `.dev` / `.ai` domain plus a `get…` / `use…` `.com`. Run a USPTO and EUIPO knock-out search on 3 finalists |
 | "One Person Company" | OPC Foundation marks; generic phrase (see v2) | Audience phrase only: "the factory for one-person software companies" |
@@ -330,11 +332,11 @@ Each sub-segment is scored 1–5 on each criterion:
 |---|---|---|---|---|
 | Coding agents (labs) | Claude Code, Codex, Gemini / Antigravity | Individual developers, enterprises | Subscriptions with usage windows; API tokens | An end-to-end factory with evidence; per-outcome pricing; model neutrality |
 | Platforms and IDEs | GitHub Copilot + Agent HQ, Cursor, Windsurf | Developers, IT | Seats plus credits or usage | Verification and release governance; predictable bills (Copilot backlash) |
-| Autonomous engineers | Devin | Teams, enterprises | Compute units (about $2.25 per 15 min on Core) | Price known before work; failed work free |
-| Enterprise factories | Factory, 8090, AWS frontier agents | Enterprise engineering | Seats plus tokens; $1M+ deals (8090) | Self-serve for 1–20 engineers |
+| Autonomous engineers | Devin | Teams, enterprises | Quotas plus usage; Teams $80 + $40 per seat; enterprise productivity guarantee paid in credits | Self-serve per-change pricing; price known before work; failed work free |
+| Software factories | **Factory** (also self-serve Teams), 8090, AWS frontier agents | Enterprise engineering first | Credits plus rate limits (Factory); seats plus tokens (8090) | A done-for-you factory for 1–20 engineers; outcome pricing; safe by default |
 | App builders | Lovable, Replit, Bolt, Base44, Emergent | Non-engineers, founders | Credits | Production-grade verification, maintenance, fair billing (§4.4) |
 | Point tools | CodeRabbit, Graphite, Greptile; Snyk, Semgrep; Resolve AI, Traversal | Teams | Seats or usage | One loop from spec to operate |
-| Orchestration | Paperclip (open source), Agent HQ, small orchestrators | Developers | Free or seats | Productized lines, verification, a factory UX for non-specialists |
+| Orchestration and open-source factories | Paperclip, OpenAI Symphony, Fabro, Gas Town, Warp Oz, Agent HQ | Developers | Free or seats | Productized lines, verification, a factory UX for non-specialists |
 
 ### 4.2 Price baseline (list prices, October 2026)
 
@@ -343,15 +345,16 @@ Each sub-segment is scored 1–5 on each criterion:
 | Claude (Claude Code included) | Pro $20 / month | Max $100 or $200; Team Premium about $125–150 per seat | [Secondary summary](https://intuitionlabs.ai/articles/claude-pricing-plans-api-costs) |
 | Cursor | Pro $20 | Pro+ $60, Ultra $200; Teams $40 per user | [DEV summary](https://dev.to/rahulxsingh/cursor-pricing-in-2026-hobby-pro-pro-ultra-teams-and-enterprise-plans-explained-4b89) |
 | GitHub Copilot | Pro $10 | Pro+ $39; Business $19, Enterprise $39 per user; usage-based AI Credits since 1 Jun 2026 | [GitHub](https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/) |
-| Devin | Core $20 plus $2.25 per compute unit | Team $500 / month (250 units) | [Secondary](https://www.usecarly.com/blog/devin-pricing/) |
-| Factory | Pro $20 | Plus $100, Max $200 (rolling rate limits) | [Secondary](https://continuumcode.ai/guides/factory-ai-pricing/) |
+| Devin | Pro $20; Max $200 | **Teams $80 + $40 per seat** (up to 200 users) | [devin.ai/pricing](https://devin.ai/pricing) (rendered 2026-10-04) |
+| Factory | Pro $20 | Plus $100, Max $200; **Teams $60 + $40 per seat** (up to 10); credits plus rolling rate limits | [factory.com/pricing](https://factory.com/pricing) (rendered 2026-10-04) |
+| Augment (Cosmos) | Standard $20 a month **flat for up to 50 seats** ($20 of usage) | Business $100 flat | [augmentcode.com/pricing](https://www.augmentcode.com/pricing) |
 | 8090 Software Factory | $200 per user per month, tokens separate | Enterprise from $1M a year | [Ry Walker](https://rywalker.com/research/8090-software-factory) |
 | Lovable | Pro $25 (100 credits) | Teams | [Secondary](https://www.eesel.ai/blog/lovable-pricing) |
 | Replit | Core $20–25 (includes $20 of usage) | Pro, Enterprise | [Secondary](https://www.lowcode.agency/blog/replit-pricing-explained) |
 
 **Reading:**
 - Seat prices cluster at $20–200 per month, but **effective spend is driven by usage**: enterprise Claude Code averages $150–250 per developer per month, and heavy users pay $500–2,000.
-- No leading product prices **per verified outcome**.
+- No self-serve product prices **per verified outcome**. Cognition's guarantee is enterprise-only and settles in credits at the end of an annual contract.
 
 ### 4.3 The six gaps
 
@@ -359,8 +362,8 @@ Each sub-segment is scored 1–5 on each criterion:
 2. **Safety gap.** Agents often run with the developer's own credentials. Production access, destructive commands and secrets are guarded by convention, not by the system's construction.
 3. **Economics gap.** Credits, compute units and token meters make bills unpredictable, and customers pay for failed attempts.
 4. **Operations gap.** Coding tools stop at the PR. Release, monitoring and fixing what shipped sit in separate tools.
-5. **Small-team gap.** Enterprise factories sell top-down. App builders target non-engineers. Teams of 1–20 have no platform team to build the guardrails DORA says AI needs.
-6. **Neutrality gap.** Lab and platform tools favor their own models. Small teams want the best model per job, and their choice of provider.
+5. **Small-team gap (narrowing).** Factory, Devin, Cursor and Augment now sell self-serve team plans. What stays open is a *done-for-you* factory: packaged lines with defaults, priced on outcomes, with an owner-level weekly report, instead of a toolkit the team has to configure.
+6. **Neutrality gap (closed).** Factory (router, bring-your-own-key), Augment (Prism), Copilot (delegates to Claude and Codex), Amp and Warp Oz already offer model choice. We still need it, but as an expected feature, not a differentiator.
 
 ### 4.4 Voice of customer: 656 negative reviews (Trustpilot)
 
@@ -419,7 +422,7 @@ Ranked by size × fit × defensibility:
 6. **Open line format plus a public factory benchmark.**
    - Category creation and the community flywheel.
    - Publish cost per verified change and failure rates.
-7. **Model neutrality and bring-your-own-key.** Route each step to the best model; let power users bring their own keys.
+7. **Model neutrality and bring-your-own-key** (expected feature, not a differentiator: Factory, Augment, Copilot, Amp and Warp Oz have it). Route each step to the best model; let power users bring their own keys; let teams bring the agent they already use as the build station.
 
 ---
 

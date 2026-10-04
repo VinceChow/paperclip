@@ -30,9 +30,10 @@ It replaces the [one-person-company (OPC) platform plan set](../2026-09-26-opc-p
 5. [**prd.md**](./prd.md) (v2): the product requirements document. Sixteen modules with numbered requirements, AI and non-functional requirements, architecture on the Paperclip fork, the data model, integrations and lead times, pricing rules, analytics, compliance, operations, the delivery plan and release gates.
 6. [**marketing-plan.md**](./marketing-plan.md) (v2): go-to-market for developers, founders and agencies. Positioning, landing page, channels (X, Hacker News, GitHub, YouTube), "the factory builds the factory," SEO and AI search, the Factory Floor community, partners, the benchmark as PR, launch week, gated paid acquisition, lifecycle, budget and a 90-day calendar.
 7. [**x-build-in-public-guide.md**](./x-build-in-public-guide.md) (v2): the beginner's guide to building the factory in public on X. Account setup, audiences, the weekly Factory Report, reply strategy, sharing rules for code and security, a 120-day plan and 30 ready-to-edit posts.
+8. [**competitor-analysis.md**](./competitor-analysis.md): a deep teardown of Factory (factory.com), our closest competitor, plus Cognition/Devin, 8090, the labs and platforms (Claude Code, Codex, Copilot, Cursor, Google, AWS), team platforms (Augment Cosmos, Amp, Warp Oz, Tessl) and open-source factories (Symphony, Fabro). Includes a feature comparison, price comparison, threat ranking, battlecards, and recommendations C1–C9 (two need your decision).
 
 **Reading order:**
-1. The proposal (why we pivoted), then the market research (the evidence base).
+1. The proposal (why we pivoted), then the market research (the evidence base) and the competitor analysis (who else is building this).
 2. Factory lines and the harness. They define what the product does and how it stays reliable and affordable.
 3. The product strategy and PRD. They turn that into a build plan.
 4. The marketing plan and X guide. They turn it into a launch.

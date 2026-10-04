@@ -2,7 +2,7 @@
 
 **Date:** 2026-10-04 (replaces the [OPC product feature strategy](../2026-09-26-opc-platform/product-feature-strategy.md))
 **Author role:** Chief Product Officer
-**Part of:** [Market research v3](./market-research.md) · [Factory lines](./factory-lines.md) · [Factory harness](./reliability-cost-harness.md) · [PRD v2](./prd.md) · [Marketing plan](./marketing-plan.md)
+**Part of:** [Market research v3](./market-research.md) · [Competitor analysis](./competitor-analysis.md) · [Factory lines](./factory-lines.md) · [Factory harness](./reliability-cost-harness.md) · [PRD v2](./prd.md) · [Marketing plan](./marketing-plan.md)
 **Question:** Which features make an AI software factory 10–100x better for solo founders, small teams and agencies than what they use today, and clearly different from the coding agents, platforms and app builders they could pick instead?
 
 **Method:**
@@ -117,13 +117,16 @@ We win by changing two things:
 | Strong coding agents (CLI, IDE, cloud) | Claude Code, Codex, Cursor, Copilot, Devin, Antigravity | **Table stakes.** We integrate them as adapters; we don't compete with them |
 | Background agents that open PRs | Copilot coding agent, Codex, Cursor, Devin, Jules | Table stakes |
 | AI code review on PRs | Claude Code Review ($15–25 per review), CodeRabbit, Graphite, Copilot | Table stakes; ours is part of verification, not a separate product |
-| Multi-agent "mission control" | GitHub Agent HQ; Paperclip | Table stakes (we have it via Paperclip) |
+| Multi-agent "mission control" | GitHub Agent HQ; Factory Missions; Devin Desktop; Warp Oz; OpenAI Symphony and Fabro (open source); Paperclip | Table stakes (we have it via Paperclip) |
+| Model routing and bring-your-own-key | Factory Router, Augment Prism, Copilot (delegates to Claude and Codex), Amp, Warp Oz | **Table stakes.** Build it; don't sell it as a differentiator |
+| Repository readiness scoring; living repository wiki | Factory (Agent Readiness, AutoWiki), Devin (DeepWiki), Augment (Context Engine) | **Table stakes.** Our Repo X-ray and Product Brain must match them, and use a simple 1–5 "factory-ready" score |
+| Scheduled and event automations (ticket to PR, code health, error and CI triage) | Factory Automations (GA 30 Sep 2026), Cursor Automations, Devin scheduled runs, Augment Cosmos | **Table stakes.** Our lines must be better packaged and verified, not merely present |
 | Security and SRE agents | AWS Security and DevOps agents, Snyk, Resolve AI | Integrate; take signals as intake |
-| Lifecycle coverage for enterprises | Factory, 8090 | Different buyer; we target small teams self-serve |
+| Lifecycle coverage ("software factory") | **Factory** (self-serve Teams at $60 + $40 per seat; whole-lifecycle layer in enterprise Private Preview), 8090 (enterprise) | **Closest competitor.** We win on outcome pricing, safety by default, holdouts and false-green refunds, and done-for-you lines ([competitor analysis](./competitor-analysis.md)) |
 | Prompt-to-app with hosting | Lovable, Replit, Bolt, Base44 | Different buyer; L4 offers a production-grade alternative for engineers |
-| **Price per verified outcome; failed work free** | Nobody among the leaders | **Differentiator (F5)** |
+| **Price per verified outcome; failed work free** | No self-serve product. Cognition has an enterprise-only guarantee, settled in credits at the end of an annual contract | **Differentiator (F5):** self-serve, per change, priced before work, refund on false green |
 | **Holdout scenarios plus an evidence card on every change** | StrongDM internally; not productized for small teams | **Differentiator (F2, F4)** |
-| **Agents structurally barred from production** | Varies, usually by convention | **Differentiator (F3)** |
+| **Agents structurally barred from production** | Varies: Factory's sandbox is opt-in and Missions need "High" autonomy; Amp demos granting production access | **Differentiator (F3):** safe by default, with a separate merge identity |
 | **Lights-out earned per line from measured track records** | Not productized | **Differentiator (F4)** |
 
 ---
@@ -137,7 +140,7 @@ We win by changing two things:
 5. **Safe by construction.** Capabilities come from the sandbox, not from prompts.
 6. **Honest by default.** Show failures, never charge for them, never call a change green that isn't.
 7. **Autonomy is earned with evidence,** per line and per repository.
-8. **Model-neutral.** Use the best agent for each station, measured.
+8. **Model-neutral.** Use the best agent for each station, measured. This is an expected feature now, not a differentiator.
 9. **Respect the owner's time:** batches, one weekly report, no notification spam.
 10. **No lock-in.** Normal Git, normal CI, an exportable Product Brain. Leaving is one click.
 
@@ -459,7 +462,7 @@ All scores are estimates to revisit with Phase 0 data.
 | Agents with production credentials or cloud-admin access | PocketOS; the lethal trifecta. Releases go only through the customer's pipeline |
 | Credits, compute units or opaque usage meters | 49% of negative reviews cite credits and usage; we price per merged change |
 | A new IDE or editor | Labs and Cursor own this; we integrate with whatever developers use |
-| Our own frontier model | Model-neutral routing is a differentiator; labs improve faster than we could |
+| Our own frontier model | Model-neutral routing is expected by customers; labs improve faster than we could |
 | A no-code app builder for non-engineers | A different buyer with the worst VOC economics; served through agencies (L5) instead |
 | A general chat assistant | Bundled free by every platform |
 | Hosting customer apps | Vercel, Railway and Fly exist; hosting creates lock-in and liability |

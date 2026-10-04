@@ -1,7 +1,7 @@
 # Go-to-Market and Marketing Plan (v2): The AI Software Factory
 
 **Date:** 2026-10-04 (replaces the [OPC marketing plan](../2026-09-26-opc-platform/marketing-plan.md))
-**Part of:** [Market research v3](./market-research.md) · [Factory lines](./factory-lines.md) · [Factory harness](./reliability-cost-harness.md) · [Product strategy v2](./product-feature-strategy.md) · [PRD v2](./prd.md) · [X build-in-public guide](./x-build-in-public-guide.md)
+**Part of:** [Market research v3](./market-research.md) · [Competitor analysis](./competitor-analysis.md) · [Factory lines](./factory-lines.md) · [Factory harness](./reliability-cost-harness.md) · [Product strategy v2](./product-feature-strategy.md) · [PRD v2](./prd.md) · [X build-in-public guide](./x-build-in-public-guide.md)
 **Scope:**
 - positioning, brand and landing page;
 - developer channels and content;
@@ -113,8 +113,9 @@
 | Alternative | Line |
 |---|---|
 | Coding agents (Claude Code, Codex, Cursor) | "Keep your favorite agent; [Brand] runs it as a factory, with tests first, hidden scenarios, a separate merge identity and a price per merged change." |
-| Autonomous engineers (Devin) | "Same ambition, different deal: a price before work starts, and failed work is free." |
-| Enterprise factories (Factory, 8090) | "Built for teams of 1–20, self-serve, live in 30 minutes." |
+| Autonomous engineers (Devin) | "Same ambition, different deal: self-serve, a price before each change, failed work free, and a refund if it breaks main within 7 days. No annual contract needed." |
+| **Factory** (factory.com) | "Factory gives you the parts to build a software factory. We run one for you, and you pay only for changes that merge." State their strengths fairly: excellent harness, broad coverage, air-gapped enterprise options |
+| 8090 | "Built for teams of 1–20, self-serve, live in 30 minutes." |
 | App builders (Lovable, Replit, Bolt) | "For engineers who need production-grade, maintained software, not a prototype." |
 | Hiring a contractor | "A Medium change costs $12 and comes with evidence. Keep your contractor for the hard problems." (Compare against a real rate.) |
 
@@ -132,6 +133,7 @@
 ## 3. Brand foundations
 
 - **Naming:**
+  - **Category crowding:** Factory's headline is "Build your software factory", Tessl uses similar wording, and 8090 has a USPTO application for "8090 SOFTWARE FACTORY". Use "AI software factory" only descriptively, and get counsel before using it in a product name or headline. Pending decision C5 in the [competitor analysis](./competitor-analysis.md#7-what-this-changes-in-our-plan-recommendations): lead with "verified software factory" or "verified changes."
   - Use a coined name, or a short word plus a `.dev` or `.ai` domain and a `get…` or `use…` `.com`. Every compound `.com` we checked was taken; `.dev` versions such as linewright.dev, provenline.dev and factoryofone.dev were free on 2026-10-04 ([market research §2.2](./market-research.md#22-naming-trademarks-and-domains)).
   - Run USPTO and EUIPO knock-out searches in classes 9 and 42 for 3 finalists.
   - Secure handles on X, GitHub, YouTube, Bluesky, LinkedIn, Reddit and Discord.
