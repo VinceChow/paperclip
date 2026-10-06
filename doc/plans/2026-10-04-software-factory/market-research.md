@@ -58,6 +58,7 @@ Secondary data (press, aggregators) is labeled as such. See [Data quality notes]
      - 10.2K small software publishers.
    - Solo founders formed **63%** of Stripe Atlas C corporations in Q2 2026.
    - The closest competitor, **Factory** (factory.com), now headlines "Build your software factory" and has a self-serve Teams plan ($60 + $40 per seat). But it bills consumption (credits plus rate limits), keeps sandboxing opt-in, and its whole-lifecycle layer is still enterprise Private Preview ([competitor analysis](./competitor-analysis.md)).
+   - **Warp Factories** (launched 18 Aug 2026, closed early access) names smaller companies as its target. But it sells factories-as-code *infrastructure* that the team builds and tunes itself, billed per agent run ([competitor analysis §3](./competitor-analysis.md#3-warp-factories-warpdevfactories-teardown)).
    - App builders (Lovable, Replit) sell prototypes to non-engineers.
 5. **What customers hate is the economics, not the AI.**
    - **66%** of negative reviews of AI-coding products complain about money: 49% about credits and usage, 42% about billing and refunds.
@@ -142,6 +143,7 @@ Dan Shapiro's five levels have become the industry's shorthand ([Simon Willison]
 | GitHub Copilot and Agent HQ | Assistant plus a multi-vendor agent "mission control" | 4.7M paid subscribers, up 75% year over year (Jan 2026) | [Microsoft](https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q2), [GitHub](https://github.blog/news-insights/company-news/welcome-home-agents/) |
 | Cognition (Devin + Windsurf) | Autonomous engineer plus IDE; enterprise "AI Productivity Guarantee" | **$1B+** annualized revenue (25 Sep 2026); $2B raised at $48B (Sep 2026) | [Bloomberg](https://www.bloomberg.com/news/articles/2026-09-08/ai-startup-cognition-raises-2-billion-at-a-48-billion-value), [Cognition](https://cognition.com/blog/1b-run-rate) |
 | Factory (factory.com) | "Build your software factory": Droids across the lifecycle (readiness, wiki, automations, review, security, QA; release and incident response in preview) | $200M at $5B (Sep 2026); Nvidia, Adobe, Palo Alto Networks | [DevOps.com](https://devops.com/factory-raises-200m-as-it-builds-agents-across-the-software-lifecycle/), [competitor analysis §2](./competitor-analysis.md#2-factory-factorycom-deep-teardown) |
+| Warp: Warp Factories | "Open infrastructure for cloud software factories": factories as code; a Foreman plus triage, spec, implement and review agents; any model or harness; closed early access since 18 Aug 2026 | Nearly 1M developers use Warp; backed by Sequoia and GV | [TechCrunch](https://techcrunch.com/2026/08/18/warps-new-system-is-an-out-of-the-box-software-factory-for-ai-development/), [competitor analysis §3](./competitor-analysis.md#3-warp-factories-warpdevfactories-teardown) |
 | 8090 | "Software Factory": Requirements, Blueprints, Work Orders, Tests, Feedback | $135M Series A; EY deployment | [Ry Walker](https://rywalker.com/research/8090-software-factory), [EY](https://www.ey.com/en_us/newsroom/2026/03/ernst-young-llp-and-8090-launch-ey-ai-pdlc) |
 | Lovable | Prompt-to-app for non-engineers, moving into "running businesses" | $400M at $13.3B (Aug 2026); 60M+ projects | [Lovable](https://lovable.dev/blog/series-c) |
 | Replit | Agent plus hosting | About $525M annualized revenue (Apr 2026); $9B | [Sacra](https://sacra.com/c/replit/) |
@@ -152,7 +154,7 @@ Dan Shapiro's five levels have become the industry's shorthand ([Simon Willison]
 **Reading:**
 - The coding-agent layer is owned by labs and platforms. They ship at model cost and own distribution.
 - Start-ups that win either go all-in on enterprise (Cognition, Factory, 8090) or on non-engineers (Lovable, Replit).
-- Factory and Cognition both now have self-serve team plans, but they sell agents billed by consumption. Neither sells a done-for-you factory priced on merged outcomes for 1–20-person teams. That is our opening ([competitor analysis §1](./competitor-analysis.md#1-summary)).
+- Factory and Cognition both now have self-serve team plans, and Warp Factories targets smaller companies. But they sell agents or factory infrastructure billed by consumption. None sells a done-for-you factory priced on merged outcomes for 1–20-person teams. That is our opening ([competitor analysis §1](./competitor-analysis.md#1-summary)).
 
 ### 1.3 Adoption
 
@@ -232,7 +234,7 @@ The **horizon** is the length of task, in expert-human time, that an agent compl
 | Item | Finding | Implication |
 |---|---|---|
 | "Factory" | Factory.ai's brand ($5B company) | Never use "Factory" alone, or as the lead word of our brand |
-| "Software Factory" | 8090's product name, with a USPTO application for "8090 SOFTWARE FACTORY" (filed 16 Jul 2025; [uspto.report](https://uspto.report/TM/99287889)). Factory headlines "Build your software factory". Also a generic US defense term | Descriptive use only ("an AI software factory"); get counsel before any use in a product name or headline. Consider leading with "verified software factory" or "verified changes" ([competitor analysis C5](./competitor-analysis.md#7-what-this-changes-in-our-plan-recommendations)) |
+| "Software Factory" | 8090's product name, with a USPTO application for "8090 SOFTWARE FACTORY" (filed 16 Jul 2025; [uspto.report](https://uspto.report/TM/99287889)). Factory headlines "Build your software factory"; Warp sells "cloud software factories". Also a generic US defense term | Descriptive use only ("an AI software factory"); get counsel before any use in a product name or headline. Consider leading with "verified software factory" or "verified changes" ([competitor analysis C5](./competitor-analysis.md#8-what-this-changes-in-our-plan-recommendations)) |
 | "Dark factory" | Industry term for Level 5 (Shapiro) | Good in content; poor as a brand (it sounds ominous) |
 | Short compound domains | RDAP, 2026-10-04: all 12 candidate `.com` names were registered (for example specline, shipline, linewright, mergewright, provenline, factoryofone, verifyline). `.dev` versions were free for 8 of 12 (for example linewright.dev, mergewright.dev, provenline.dev, factoryofone.dev) | Plan for a coined name, or a `.dev` / `.ai` domain plus a `get…` / `use…` `.com`. Run a USPTO and EUIPO knock-out search on 3 finalists |
 | "One Person Company" | OPC Foundation marks; generic phrase (see v2) | Audience phrase only: "the factory for one-person software companies" |
@@ -333,7 +335,7 @@ Each sub-segment is scored 1–5 on each criterion:
 | Coding agents (labs) | Claude Code, Codex, Gemini / Antigravity | Individual developers, enterprises | Subscriptions with usage windows; API tokens | An end-to-end factory with evidence; per-outcome pricing; model neutrality |
 | Platforms and IDEs | GitHub Copilot + Agent HQ, Cursor, Windsurf | Developers, IT | Seats plus credits or usage | Verification and release governance; predictable bills (Copilot backlash) |
 | Autonomous engineers | Devin | Teams, enterprises | Quotas plus usage; Teams $80 + $40 per seat; enterprise productivity guarantee paid in credits | Self-serve per-change pricing; price known before work; failed work free |
-| Software factories | **Factory** (also self-serve Teams), 8090, AWS frontier agents | Enterprise engineering first | Credits plus rate limits (Factory); seats plus tokens (8090) | A done-for-you factory for 1–20 engineers; outcome pricing; safe by default |
+| Software factories | **Factory** (also self-serve Teams), **Warp Factories** (early access), 8090, AWS frontier agents | Enterprise engineering first; Warp aims at smaller companies | Credits plus rate limits (Factory); per agent run (Warp); seats plus tokens (8090) | A done-for-you factory for 1–20 engineers; outcome pricing; safe by default |
 | App builders | Lovable, Replit, Bolt, Base44, Emergent | Non-engineers, founders | Credits | Production-grade verification, maintenance, fair billing (§4.4) |
 | Point tools | CodeRabbit, Graphite, Greptile; Snyk, Semgrep; Resolve AI, Traversal | Teams | Seats or usage | One loop from spec to operate |
 | Orchestration and open-source factories | Paperclip, OpenAI Symphony, Fabro, Gas Town, Warp Oz, Agent HQ | Developers | Free or seats | Productized lines, verification, a factory UX for non-specialists |
@@ -348,6 +350,7 @@ Each sub-segment is scored 1–5 on each criterion:
 | Devin | Pro $20; Max $200 | **Teams $80 + $40 per seat** (up to 200 users) | [devin.ai/pricing](https://devin.ai/pricing) (rendered 2026-10-04) |
 | Factory | Pro $20 | Plus $100, Max $200; **Teams $60 + $40 per seat** (up to 10); credits plus rolling rate limits | [factory.com/pricing](https://factory.com/pricing) (rendered 2026-10-04) |
 | Augment (Cosmos) | Standard $20 a month **flat for up to 50 seats** ($20 of usage) | Business $100 flat | [augmentcode.com/pricing](https://www.augmentcode.com/pricing) |
+| Warp (Factories) | Build $20 (includes $20 of usage); pay as you go at a 20% markup | Max $200; **Business $50 per user** (up to 25); factories priced per agent run; closed early access | [warp.dev/pricing](https://www.warp.dev/pricing) (rendered 2026-10-06) |
 | 8090 Software Factory | $200 per user per month, tokens separate | Enterprise from $1M a year | [Ry Walker](https://rywalker.com/research/8090-software-factory) |
 | Lovable | Pro $25 (100 credits) | Teams | [Secondary](https://www.eesel.ai/blog/lovable-pricing) |
 | Replit | Core $20–25 (includes $20 of usage) | Pro, Enterprise | [Secondary](https://www.lowcode.agency/blog/replit-pricing-explained) |
@@ -362,8 +365,8 @@ Each sub-segment is scored 1–5 on each criterion:
 2. **Safety gap.** Agents often run with the developer's own credentials. Production access, destructive commands and secrets are guarded by convention, not by the system's construction.
 3. **Economics gap.** Credits, compute units and token meters make bills unpredictable, and customers pay for failed attempts.
 4. **Operations gap.** Coding tools stop at the PR. Release, monitoring and fixing what shipped sit in separate tools.
-5. **Small-team gap (narrowing).** Factory, Devin, Cursor and Augment now sell self-serve team plans. What stays open is a *done-for-you* factory: packaged lines with defaults, priced on outcomes, with an owner-level weekly report, instead of a toolkit the team has to configure.
-6. **Neutrality gap (closed).** Factory (router, bring-your-own-key), Augment (Prism), Copilot (delegates to Claude and Codex), Amp and Warp Oz already offer model choice. We still need it, but as an expected feature, not a differentiator.
+5. **Small-team gap (narrowing).** Factory, Devin, Cursor and Augment now sell self-serve team plans, and Warp Factories targets smaller companies. What stays open is a *done-for-you* factory: packaged lines with defaults, priced on outcomes, with an owner-level weekly report, instead of a toolkit the team has to configure.
+6. **Neutrality gap (closed).** Factory (router, bring-your-own-key), Augment (Prism), Copilot (delegates to Claude and Codex), Amp and Warp (Oz and Factories) already offer model choice. We still need it, but as an expected feature, not a differentiator.
 
 ### 4.4 Voice of customer: 656 negative reviews (Trustpilot)
 
@@ -422,7 +425,7 @@ Ranked by size × fit × defensibility:
 6. **Open line format plus a public factory benchmark.**
    - Category creation and the community flywheel.
    - Publish cost per verified change and failure rates.
-7. **Model neutrality and bring-your-own-key** (expected feature, not a differentiator: Factory, Augment, Copilot, Amp and Warp Oz have it). Route each step to the best model; let power users bring their own keys; let teams bring the agent they already use as the build station.
+7. **Model neutrality and bring-your-own-key** (expected feature, not a differentiator: Factory, Augment, Copilot, Amp and Warp have it). Route each step to the best model; let power users bring their own keys; let teams bring the agent they already use as the build station.
 
 ---
 
@@ -475,6 +478,8 @@ Ranked by size × fit × defensibility:
 | **Gross margin per merged change** | ≈ **50%** |
 | Gross margin on the platform fee | ≈ 90% |
 | **Blended gross margin** | ≈ **55–60%** |
+
+**Caution (added 2026-10-06):** Warp measured about **$30 per completed PR** in its own factory, and its dashboard example shows $7.07 of compute per PR. The sandbox line above ($0.15) is the weakest assumption. At $2 of compute per Medium change, the small-team margin falls from about 58% to about 45%. Phase 0 must measure all-in cost before the $12 price is final ([competitor analysis §3.4](./competitor-analysis.md#34-cost-per-pr-reality-check-what-warps-numbers-mean-for-our-pricing)).
 
 ### 6.3 Pricing recommendation (decision D5; to validate in Phase 0)
 
@@ -530,6 +535,7 @@ These fit the $200–1,000 per account range used in sizing (agencies run above 
 | Labs and platforms bundle factory features at model cost (Agent HQ, Claude Code, Codex, Antigravity) | High | High | Own what platforms won't: model neutrality, outcome pricing, small-team UX, evidence, human support. Integrate with their agents as adapters |
 | Reliability on real small-team codebases | High | Medium | Bug and Maintenance lines first; order sizing; test-first orders; holdout scenarios |
 | Token-cost volatility or price increases | High | Medium | Routing, caching, batch; bring-your-own-key mode; price review before GA; per-order caps |
+| All-in cost per change well above the ≈ $5 model (compute for builds, tests, previews; Warp reports ≈ $30 per PR) | High | Medium | Measure in Phase 0; Medium ≤ $6 p50 as a pricing gate before beta; resize or re-price Medium if it fails |
 | Security incident involving customer code or production | Very high | Low–Medium | Sandbox-only execution; no production credentials; destructive-action gate; SOC 2 Type II; penetration test |
 | "Replace engineers" backlash | Medium | Medium | Messaging per §2.3; publish honest failure rates |
 | Crowded category; high CAC | Medium | High | Build in public; open line format and benchmark; agency partnerships; Show HN |

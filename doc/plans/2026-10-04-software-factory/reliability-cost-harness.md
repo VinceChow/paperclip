@@ -272,6 +272,13 @@ Source: [Anthropic, optimizing for cost and intelligence](https://platform.claud
 
 **Cross-check:** Anthropic's enterprise Claude Code average is about $13 per active developer-day ([docs](https://code.claude.com/docs/en/costs)). At 2–4 changes a day, that is about $3–6 per change.
 
+**Second cross-check (Warp Factories, 2026-10-06):** Warp measured about **$30 per completed PR** in its own factory, down from about $80 after re-routing the build model. Its dashboard example shows **$18.09 per PR**: inference $4.36, compute $7.07 and platform $6.66 ([competitor analysis §3.4](./competitor-analysis.md#34-cost-per-pr-reality-check-what-warps-numbers-mean-for-our-pricing)).
+- **Inference** in that example is close to our $4.79, which supports the routing and caching design.
+- **Compute is the weak assumption.** Our $0.15 sandbox line may be far too low once full test suites, builds, previews and browser checks run per order. On the small-team account below:
+  - at $2 of compute per change, gross margin falls from ≈ 58% to ≈ 45%;
+  - at Warp's $7.07, it falls to ≈ 10%.
+- **Gate:** Phase 0 measures all-in cost by line and size. Medium ≤ $6 p50 is a pricing gate before beta ([PRD §19.1](./prd.md#191-risks); competitor analysis C10).
+
 | Same Medium change, different design | Cost |
 |---|---|
 | **Factory design** (routed, cached, sized) | **≈ $5** |

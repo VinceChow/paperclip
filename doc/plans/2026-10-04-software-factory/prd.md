@@ -421,6 +421,7 @@ Each table lists ID, requirement, priority and acceptance criteria (AC). Detaile
 | RPT-4 | A morning summary at a configurable time | P0 | — |
 | RPT-5 | A share card for the weekly report with owner-controlled redaction (used for build-in-public) | P1 | — |
 | RPT-6 | Read-only client reports for agencies | P1 | — |
+| RPT-7 | The weekly report SHOULD show **autonomy** (the share of merged changes with no human code push) and **cost per merged change by size and by component** (inference, compute) ([competitor analysis C12](./competitor-analysis.md#8-what-this-changes-in-our-plan-recommendations)) | P1 | — |
 
 ### 8.10 M10 Channels and notifications (CHN)
 
@@ -504,6 +505,7 @@ See §14 for plan details.
 | ADM-4 | Feature flags and per-account staged rollouts | P0 | — |
 | ADM-5 | An ops console to inspect, retry and cancel orders, with redacted traces | P0 | — |
 | ADM-6 | An internal benchmark harness (public at P1) | P0 / P1 | — |
+| ADM-7 | **Replay and self-improvement:** before a model or line version rolls out to an account, replay a sample of that account's past orders on the candidate and compare cost, first-pass merge and holdout pass rates. Group repeated holdout failures, false greens and reverts into proposed line changes, with evidence, for line owners to review ([competitor analysis C11](./competitor-analysis.md#8-what-this-changes-in-our-plan-recommendations)) | P1 | No line version reaches an account cohort without a replay result |
 
 ---
 
@@ -870,7 +872,8 @@ For comparison, the from-scratch estimate was about 145 person-weeks ([pivot pro
 
 | Risk | Impact | Likelihood | Mitigation |
 |---|---|---|---|
-| **Factory (factory.com) packages its Software Factory layer for small teams,** or labs and platforms ship an equivalent | High | High | Outcome pricing (charge on merge, false-green refunds); safe by default; hidden holdouts; done-for-you lines; human support; benchmark on cost per verified change. Monthly competitive watch ([competitor analysis](./competitor-analysis.md)) |
+| **Factory (factory.com) packages its Software Factory layer for small teams, Warp Factories leaves early access with small-team packaging,** or labs and platforms ship an equivalent | High | High | Outcome pricing (charge on merge, false-green refunds); safe by default; hidden holdouts; done-for-you lines; human support; benchmark on cost per verified change. Monthly competitive watch ([competitor analysis](./competitor-analysis.md)) |
+| **All-in cost per Medium change is well above the modeled ≈ $5,** mainly from sandbox, CI and preview compute (Warp reports ≈ $30 per PR internally, and shows $7.07 of compute in an example; [competitor analysis §3.4](./competitor-analysis.md#34-cost-per-pr-reality-check-what-warps-numbers-mean-for-our-pricing)) | High | Medium | Phase 0 measures all-in cost by line and size on design-partner repositories. Pricing gate before beta: Medium ≤ $6 p50; at $6–10, cut Medium order size or raise its price; above $10, re-decide per-change pricing, with bring-your-own-key as the fallback (C10) |
 | Reliability below target on messy repositories | High | Medium | X-ray readiness checks; "make tests runnable" orders; L2 and L3 first; order sizing |
 | Outcome pricing margin squeezed by token costs | High | Medium | Routing, caching, sizing; bring-your-own-key mode; price review before GA |
 | Sandbox escape or credential leak | Very high | Low | No secrets in sandboxes; egress allowlists; penetration test; red team; bug bounty after GA |
